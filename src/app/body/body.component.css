@@ -1,0 +1,6 @@
+.grid-body-container {
+    height: auto;
+    width: 100%;
+    background-color: var(--light-orange);
+    top: 150px;
+}
