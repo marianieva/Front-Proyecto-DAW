@@ -24,7 +24,7 @@
 
 /* DIMENSIONES PRIMER CONTENEDOR */
 
-.first-body-container {
+.first-body-container, .second-body-container {
     
     height: auto;
     margin-left: 32px;
@@ -34,49 +34,25 @@
     flex-direction: column;
 }
 
-.title-first-body-container {
+.title-first-body-container, .title-second-body-container {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin: 0px;
 }
 
-/* ESTILOS SLIDER */
-
-.slider, .slides, .slide {
-    width: 100%;
+.title-text {
+    margin-top: 0px;
+    margin-bottom: 16px;
 }
 
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-  
-.slides {
+.cards-container {
     display: flex;
-    transition: transform 0.5s ease;
+    flex-direction: row;
 }
-  
-.slides img {
-    width: 100%;
-    height: auto;
-}
-  
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 
-    cursor: pointer;
-    padding: 10px;
-    z-index: 2;
-}
-  
-.prev {
-    left: 0;
-}
-  
-.next {
-    right: 0;
+@media screen and (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+    }
 }
