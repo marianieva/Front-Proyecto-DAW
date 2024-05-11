@@ -24,12 +24,19 @@
 
 /* DIMENSIONES PRIMER CONTENEDOR */
 
-.first-body-container, .second-body-container {
-    
+.first-body-container {
     height: auto;
     margin-left: 32px;
     margin-right: 32px;
     margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-body-container {
+    height: auto;
+    margin-left: 32px;
+    margin-right: 32px;
     display: flex;
     flex-direction: column;
 }
@@ -49,10 +56,7 @@
 .cards-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
-    }
-}
