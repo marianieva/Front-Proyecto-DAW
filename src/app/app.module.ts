@@ -9,6 +9,7 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
 import { CardComponent } from './card/card.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 @NgModule({
   declarations: [	
@@ -18,7 +19,8 @@ import { CardComponent } from './card/card.component';
       BodyComponent,
       FooterComponent,
       SliderComponent,
-      CardComponent
+      CardComponent,
+      ProfileCardComponent
    ],
   imports: [
     BrowserModule,

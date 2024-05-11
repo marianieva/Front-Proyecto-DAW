@@ -1,0 +1,43 @@
+.profile-card {
+    background-color: var(--light-blue);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 2%;
+    align-items: center;
+}
+
+.button-update-profile {
+    width: 100%;
+}
+
+.profile-content {
+    width: 40%;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.profile-photo {
+    width: 40%;
+}
+
+.img_card {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        padding: 5%;
+    }
+    .profile-photo {
+        width: 90%;
+        margin-bottom: 32px;
+    }
+    .profile-content {
+        width: 90%;
+        padding: 16px;
+    }
+}
