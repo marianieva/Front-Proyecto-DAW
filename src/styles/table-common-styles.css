@@ -4,11 +4,12 @@ table {
     text-align: center;
     vertical-align: middle;
     border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     & th {
         padding: 16px;
         background-color: var(--light-blue);
-        
     }
 
     & tr td {

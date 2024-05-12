@@ -12,6 +12,13 @@ import { CardComponent } from './card/card.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { FormCliAltaPedidoComponent } from './form-cli-alta-pedido/form-cli-alta-pedido.component';
 import { FormCliIncidenciaComponent } from './form-cli-incidencia/form-cli-incidencia.component';
+import { FormModificarUsuarioComponent } from './form-modificar-usuario/form-modificar-usuario.component';
+import { FormModificarPasswordComponent } from './form-modificar-password/form-modificar-password.component';
+import { FormTecIncidenciaComponent } from './form-tec-incidencia/form-tec-incidencia.component';
+import { FormAdminIncidenciaComponent } from './form-admin-incidencia/form-admin-incidencia.component';
+import { FormAdminAltaUsuarioComponent } from './form-admin-alta-usuario/form-admin-alta-usuario.component';
+import { FormAdminImpresoraComponent } from './form-admin-impresora/form-admin-impresora.component';
+import { FormAdminModificarUsuarioComponent } from './form-admin-modificar-usuario/form-admin-modificar-usuario.component';
 
 @NgModule({
   declarations: [	
@@ -24,7 +31,14 @@ import { FormCliIncidenciaComponent } from './form-cli-incidencia/form-cli-incid
       CardComponent,
       ProfileCardComponent,
       FormCliAltaPedidoComponent,
-      FormCliIncidenciaComponent
+      FormCliIncidenciaComponent,
+      FormModificarUsuarioComponent,
+      FormModificarPasswordComponent,
+      FormTecIncidenciaComponent,
+      FormAdminIncidenciaComponent,
+      FormAdminAltaUsuarioComponent,
+      FormAdminImpresoraComponent,
+      FormAdminModificarUsuarioComponent
    ],
   imports: [
     BrowserModule,

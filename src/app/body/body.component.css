@@ -1,4 +1,5 @@
 @import '../../styles/button-common-styles.css';
+@import '../../styles/table-common-styles.css';
 
 .grid-body-container {
     height: auto;

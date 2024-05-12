@@ -64,6 +64,28 @@ form {
     margin-bottom: 16px;;
 }
 
+input {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 16px;
+    background-color: var(--white);
+    border: 0px;
+    width: 50%;
+    height: 32px;
+}
+
+.one-column {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (max-width: 768px){
+    .one-column {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
 @media screen and (max-width: 800px){
     .form-container {
         flex-direction: column;
@@ -75,3 +97,4 @@ form {
         margin-top: 16px;
     }
 }
+

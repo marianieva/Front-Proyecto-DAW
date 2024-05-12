@@ -98,21 +98,21 @@ div.gradiente {
     --title-XL-letter-spacing: 0;
 
     --title-M-font: "Crimson Text", serif;
-    --title-M-font-size: 3rem;
+    --title-M-font-size: 40px;
     --title-M-font-weight: 600;
     --title-M-letter-spacing: 0;
 
     --title-card-font: "Roboto", sans-serif;
-    --title-card-font-size: 1rem;
+    --title-card-font-size: 20px;
     --title-card-font-weight: bold;
     --title-card-letter-spacing: 0;
 
     --text-description-font: "Roboto", sans-serif;
-    --text-description-font-size: 1.5rem;
+    --text-description-font-size: 20px;
     --text-description-spacing: 0;
 
     --text-card-font: "Roboto", sans-serif;
-    --text-card-font-size: 1rem;
+    --text-card-font-size: 16px;
     --text-card-spacing: 0;
 }
 

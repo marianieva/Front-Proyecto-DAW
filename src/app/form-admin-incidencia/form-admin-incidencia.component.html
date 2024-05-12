@@ -1,8 +1,15 @@
 <div class="title-form title-M">
-    <p>Formulario para notificar una incidencia</p>
+    <p>Formulario para dar de alta una incidencia</p>
 </div>
 <form class="form-cli-incidencia-container form-container one-column"  action="">
     <div class="form-first-column title-card">
+        <div class="input">
+            <p>Seleccione usuario:</p>
+            <select name="usuario" id="select-usuario" class="select text-card">
+                <option value="1"><span>Opcion 1</span></option>
+                <option value="2"><span>Opcion 2</span></option>
+            </select>
+        </div>
         <div class="input">
             <p>Seleccione su equipo:</p>
             <select name="equipo" id="select-equipo" class="select text-card">
@@ -11,8 +18,8 @@
             </select>
         </div>
         <div class="input">
-            <p>Observaciones:</p>
-            <textarea name="observaciones" id="observaciones" rows="3" class="textarea text-card" placeholder="Indique su incidencia"></textarea>
+            <p>Descripción:</p>
+            <textarea name="observaciones" id="observaciones" rows="6" class="textarea text-card" placeholder="Indique descripción de la incidencia"></textarea>
         </div>
         <button class="button-form first-button title-card">Enviar incidencia</button>
     </div>
