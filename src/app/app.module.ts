@@ -11,6 +11,7 @@ import { SliderComponent } from './slider/slider.component';
 import { CardComponent } from './card/card.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { FormCliAltaPedidoComponent } from './form-cli-alta-pedido/form-cli-alta-pedido.component';
+import { FormCliIncidenciaComponent } from './form-cli-incidencia/form-cli-incidencia.component';
 
 @NgModule({
   declarations: [	
@@ -22,7 +23,8 @@ import { FormCliAltaPedidoComponent } from './form-cli-alta-pedido/form-cli-alta
       SliderComponent,
       CardComponent,
       ProfileCardComponent,
-      FormCliAltaPedidoComponent
+      FormCliAltaPedidoComponent,
+      FormCliIncidenciaComponent
    ],
   imports: [
     BrowserModule,

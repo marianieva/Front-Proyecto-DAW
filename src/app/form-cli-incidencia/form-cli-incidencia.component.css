@@ -1,0 +1,15 @@
+@import '../../styles/form-common-styles.css';
+@import '../../styles/button-common-styles.css';
+@import '../../styles/table-common-styles.css';
+
+.form-cli-incidencia-container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (max-width: 768px){
+    .form-cli-incidencia-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
