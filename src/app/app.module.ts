@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
 import { CardComponent } from './card/card.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { FormCliAltaPedidoComponent } from './form-cli-alta-pedido/form-cli-alta-pedido.component';
 
 @NgModule({
   declarations: [	
@@ -20,7 +21,8 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
       FooterComponent,
       SliderComponent,
       CardComponent,
-      ProfileCardComponent
+      ProfileCardComponent,
+      FormCliAltaPedidoComponent
    ],
   imports: [
     BrowserModule,

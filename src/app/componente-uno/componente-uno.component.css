@@ -1,3 +1,5 @@
+@import '../../styles/button-common-styles.css';
+
 h1 {
     color: red;
 }
