@@ -4,21 +4,15 @@
 
 .textarea {
     height: auto;
-    width: 100%;
-    margin-left: 8px;
-}
-
-.textarea2 {
-    height: auto;
     width: 90%;
 }
 
-.form-container2 {
+.form-container {
     display:flex;
     flex-direction: column;
 }
 
-.form-ppal-container2 {
+.form-ppal-container {
     display: flex;
     flex-direction: row;
 }
@@ -28,7 +22,7 @@
 }
 
 @media screen and (max-width:800px) {
-    .form-ppal-container2 {
+    .form-ppal-container {
         flex-direction: column;
         width: auto;
     }
