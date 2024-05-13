@@ -1,0 +1,12 @@
+<div class="div-prueba">
+
+    <div *ngFor="let incidencia of incidencias">
+        <h2>Incidencia {{ incidencia.idIncidencia }}</h2>
+        <p>Descripción del cliente: {{ incidencia.descripcionCliente }}</p>
+        <p>Estado: {{ incidencia.estado }}</p>
+        <p>Fecha de inicio: {{ incidencia.fechaInicio }}</p>
+        <p>Fecha de alta: {{ incidencia.fechaAlta }}</p>
+        <p>Serial Number: {{ incidencia.serialNumber.serialNumber }}</p>
+        <p>Marca de la impresora: {{ incidencia.serialNumber.marca }}</p>
+      </div>
+</div>

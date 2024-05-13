@@ -3,22 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponenteUnoComponent } from './componente-uno/componente-uno.component';
-import { HeaderComponent } from './header/header.component';
-import { BodyComponent } from './body/body.component';
-import { FooterComponent } from './footer/footer.component';
-import { SliderComponent } from './slider/slider.component';
-import { CardComponent } from './card/card.component';
-import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { FormCliAltaPedidoComponent } from './form-cli-alta-pedido/form-cli-alta-pedido.component';
-import { FormCliIncidenciaComponent } from './form-cli-incidencia/form-cli-incidencia.component';
-import { FormModificarUsuarioComponent } from './form-modificar-usuario/form-modificar-usuario.component';
-import { FormModificarPasswordComponent } from './form-modificar-password/form-modificar-password.component';
-import { FormTecIncidenciaComponent } from './form-tec-incidencia/form-tec-incidencia.component';
-import { FormAdminIncidenciaComponent } from './form-admin-incidencia/form-admin-incidencia.component';
-import { FormAdminAltaUsuarioComponent } from './form-admin-alta-usuario/form-admin-alta-usuario.component';
-import { FormAdminImpresoraComponent } from './form-admin-impresora/form-admin-impresora.component';
-import { FormAdminModificarUsuarioComponent } from './form-admin-modificar-usuario/form-admin-modificar-usuario.component';
+import { ComponenteUnoComponent } from './Componentes/componente-uno/componente-uno.component';
+import { HeaderComponent } from './Componentes/header/header.component';
+import { BodyComponent } from './Componentes/body/body.component';
+import { FooterComponent } from './Componentes/footer/footer.component';
+import { SliderComponent } from './Componentes/slider/slider.component';
+import { CardComponent } from './Componentes/card/card.component';
+import { ProfileCardComponent } from './Componentes/profile-card/profile-card.component';
+import { FormCliAltaPedidoComponent } from './Componentes/form-cli-alta-pedido/form-cli-alta-pedido.component';
+import { FormCliIncidenciaComponent } from './Componentes/form-cli-incidencia/form-cli-incidencia.component';
+import { FormModificarUsuarioComponent } from './Componentes/form-modificar-usuario/form-modificar-usuario.component';
+import { FormModificarPasswordComponent } from './Componentes/form-modificar-password/form-modificar-password.component';
+import { FormTecIncidenciaComponent } from './Componentes/form-tec-incidencia/form-tec-incidencia.component';
+import { FormAdminIncidenciaComponent } from './Componentes/form-admin-incidencia/form-admin-incidencia.component';
+import { FormAdminAltaUsuarioComponent } from './Componentes/form-admin-alta-usuario/form-admin-alta-usuario.component';
+import { FormAdminImpresoraComponent } from './Componentes/form-admin-impresora/form-admin-impresora.component';
+import { FormAdminModificarUsuarioComponent } from './Componentes/form-admin-modificar-usuario/form-admin-modificar-usuario.component';
+import { AaPruebaBackComponent } from './aa-prueba-back/aa-prueba-back.component';
+
+import { HttpClientModule } from "@angular/common/http";
+import { PruebaService } from 'src/app/Services/prueba.service';
 
 @NgModule({
   declarations: [	
@@ -38,13 +42,17 @@ import { FormAdminModificarUsuarioComponent } from './form-admin-modificar-usuar
       FormAdminIncidenciaComponent,
       FormAdminAltaUsuarioComponent,
       FormAdminImpresoraComponent,
-      FormAdminModificarUsuarioComponent
+      FormAdminModificarUsuarioComponent,
+      AaPruebaBackComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PruebaService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
