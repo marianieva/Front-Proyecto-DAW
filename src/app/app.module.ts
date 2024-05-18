@@ -23,6 +23,11 @@ import { AaPruebaBackComponent } from './aa-prueba-back/aa-prueba-back.component
 
 import { HttpClientModule } from "@angular/common/http";
 import { PruebaService } from 'src/app/Services/prueba.service';
+import { CliHomeComponent } from './Bodies/cli-home/cli-home.component';
+import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component';
+import { TableCliEquiposComponent } from './Componentes/table-cli-equipos/table-cli-equipos.component';
+import { CliPedidosComponent } from './Bodies/cli-pedidos/cli-pedidos.component';
+import { TableCliPedidosComponent } from './Componentes/table-cli-pedidos/table-cli-pedidos.component';
 
 @NgModule({
   declarations: [	
@@ -43,7 +48,12 @@ import { PruebaService } from 'src/app/Services/prueba.service';
       FormAdminAltaUsuarioComponent,
       FormAdminImpresoraComponent,
       FormAdminModificarUsuarioComponent,
-      AaPruebaBackComponent
+      AaPruebaBackComponent,
+      CliHomeComponent,
+      CliUsuarioComponent,
+      TableCliEquiposComponent,
+      CliPedidosComponent,
+      TableCliPedidosComponent
    ],
   imports: [
     BrowserModule,

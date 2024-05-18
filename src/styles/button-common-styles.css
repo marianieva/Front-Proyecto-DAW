@@ -109,3 +109,13 @@
         background-color: var(--light-gray);
     }
 }
+
+.button-large {
+    width: 50%;
+}
+
+@media screen and (max-width:768px){
+    .button-large {
+        width: 80%;
+    } 
+}

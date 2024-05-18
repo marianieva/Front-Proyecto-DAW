@@ -17,10 +17,14 @@
 }
 
 .profile-content {
-    width: 40%;
+    width: 90%;
     background-color: var(--white);
     border-radius: 16px;
     padding: 24px;
+    margin-bottom: 16px;
+}
+.profile-button {
+    width: 100%;
 }
 
 .profile-photo {
@@ -29,6 +33,11 @@
 
 .img_card {
     width: 100%;
+}
+
+.profile-second-column {
+    width: 40%;
+    padding: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -43,5 +52,8 @@
     .profile-content {
         width: 90%;
         padding: 16px;
+    }
+    .profile-second-column {
+        width: 90%;
     }
 }

@@ -5,7 +5,7 @@
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
   
-app-header, app-body, app-footer {
+app-header, app-body, app-cli-home, app-cli-usuario, app-cli-pedidos, app-footer {
     grid-column: 2 / span 10; /* Los componentes ocupan 10 columnas centradas */
 }
 
@@ -13,10 +13,6 @@ app-header.grid-header-container {
     position: fixed; /* Cabecera fija en la parte superior */
     top: 0;
     height: 150px;
-}
-
-app-body {
-    /* El cuerpo comienza en la segunda fila */
 }
 
 app-footer {

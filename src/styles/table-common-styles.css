@@ -32,3 +32,8 @@ table {
         border-top-right-radius: 8px;
     }
 }
+
+.button-form {
+    margin:4px;
+    font-weight: bold;
+}
