@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-slider',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-
+  
+  userRole: string = '';
   slideIndex: number = 1;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    
+    this.userRole = this.userService.getUserRole();
+
     this.showSlides(this.slideIndex);
 
     // Obtener referencia al botón

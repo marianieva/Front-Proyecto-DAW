@@ -6,7 +6,8 @@
         <div class="buttons-container">
             <button class="nav-orange-button title-card">Incidencias</button>
             <button class="nav-orange-button title-card">Pedidos</button>
-            <button class="nav-orange-button title-card">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
             <button class="nav-blue-button title-card">Cerrar sesión</button>
         </div>
     </div>
@@ -18,7 +19,8 @@
             <button class="nav-orange-button title-card">Pedidos</button>
         </div>
         <div class="buttons-nav-tablet-container2">
-            <button class="nav-orange-button title-card">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
             <button class="nav-blue-button title-card">Cerrar sesión</button>
         </div>
     </div>

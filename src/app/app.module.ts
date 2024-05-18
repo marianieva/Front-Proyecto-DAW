@@ -28,6 +28,11 @@ import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component'
 import { TableCliEquiposComponent } from './Componentes/table-cli-equipos/table-cli-equipos.component';
 import { CliPedidosComponent } from './Bodies/cli-pedidos/cli-pedidos.component';
 import { TableCliPedidosComponent } from './Componentes/table-cli-pedidos/table-cli-pedidos.component';
+import { CliIncidenciasComponent } from './Bodies/cli-incidencias/cli-incidencias.component';
+import { TableCliIncidenciasComponent } from './Componentes/table-cli-incidencias/table-cli-incidencias.component';
+import { TableTecIncidenciasFinComponent } from './Componentes/table-tec-incidencias-fin/table-tec-incidencias-fin.component';
+import { TableTecAlmacenComponent } from './Componentes/table-tec-almacen/table-tec-almacen.component';
+import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incidencias-pend/table-tec-incidencias-pend.component';
 
 @NgModule({
   declarations: [	
@@ -53,7 +58,12 @@ import { TableCliPedidosComponent } from './Componentes/table-cli-pedidos/table-
       CliUsuarioComponent,
       TableCliEquiposComponent,
       CliPedidosComponent,
-      TableCliPedidosComponent
+      TableCliPedidosComponent,
+      CliIncidenciasComponent,
+      TableCliIncidenciasComponent,
+      TableTecIncidenciasFinComponent,
+      TableTecAlmacenComponent,
+      TableTecIncidenciasPendComponent
    ],
   imports: [
     BrowserModule,

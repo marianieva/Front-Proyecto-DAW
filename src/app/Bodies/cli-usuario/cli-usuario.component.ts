@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-cli-usuario',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cli-usuario.component.css']
 })
 export class CliUsuarioComponent implements OnInit {
+  
+  userRole: string = '';
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userRole = this.userService.getUserRole();
   }
 
 }

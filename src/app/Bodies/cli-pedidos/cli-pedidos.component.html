@@ -10,12 +10,28 @@
             <app-form-cli-alta-pedido></app-form-cli-alta-pedido>
         </div>
     </div>
-    <div class="second-body-container">
+    <div class="second-body-container" *ngIf="userRole === 'cliente'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla historico de pedidos</p>
         </div>
         <div class="table-container">
             <app-table-cli-pedidos></app-table-cli-pedidos>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+        <div class="title-second-body-container title-M">
+            <p class="title-text">Tabla historico de pedidos</p>
+        </div>
+        <div class="table-container">
+            <app-table-cli-pedidos></app-table-cli-pedidos>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+        <div class="title-second-body-container title-M">
+            <p class="title-text">Almacén de pedidos</p>
+        </div>
+        <div class="table-container">
+            <app-table-tec-almacen></app-table-tec-almacen>
         </div>
     </div>
 </div>

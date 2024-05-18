@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-form-cli-alta-pedido',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCliAltaPedidoComponent implements OnInit {
 
-  constructor() { }
+  userRole: string = '';
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userRole = this.userService.getUserRole();
   }
-
 }

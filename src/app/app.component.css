@@ -5,7 +5,8 @@
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
   
-app-header, app-body, app-cli-home, app-cli-usuario, app-cli-pedidos, app-footer {
+app-header, app-body, app-cli-home, app-cli-usuario, app-cli-pedidos,
+app-cli-incidencias, app-footer {
     grid-column: 2 / span 10; /* Los componentes ocupan 10 columnas centradas */
 }
 

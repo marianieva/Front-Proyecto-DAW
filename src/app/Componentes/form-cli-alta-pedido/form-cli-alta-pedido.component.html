@@ -1,5 +1,6 @@
 <div class="title-form title-M">
-    <p>Formulario para realizar pedidos de consumibles</p>
+    <p *ngIf="userRole === 'cliente'">Formulario para realizar pedidos de consumibles</p>
+    <p *ngIf="userRole === 'tecnico'">Formulario para realizar pedidos de recambios</p>
 </div>
 <form class="form-cli-alta-pedido-container form-container"  action="">
     <div class="form-first-column title-card">

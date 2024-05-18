@@ -1,7 +1,9 @@
 <div class="profile-card profile-shadow">
-    <div class="profile-photo avatar-shadow">
+    <div class="profile-photo avatar-shadow"  *ngIf="userRole === 'cliente'">
         <img src="assets/images/profile/foto-perfil-cliente.jpg" alt="Foto perfil" class="img_card">
-       <!-- <img src="assets/images/profile/foto-perfil-tecnico.jpg" alt="Foto perfil" class="img_card"> -->
+    </div>
+    <div class="profile-photo avatar-shadow"  *ngIf="userRole === 'tecnico'">
+        <img src="assets/images/profile/foto-perfil-tecnico.jpg" alt="Foto perfil" class="img_card">
     </div>
     <div class="profile-second-column">
         <div class="profile-content text-description">
