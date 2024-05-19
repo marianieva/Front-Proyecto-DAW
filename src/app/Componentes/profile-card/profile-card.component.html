@@ -15,7 +15,9 @@
             <p>Zona: <span></span></p>
         </div>
         <div class="profile-button text-description">
-            <button class="button-update-profile nav-blue-button text-description">Modificar perfil</button>
+            <button class="button-update-profile nav-blue-button text-description" (click)="openModal()">Modificar perfil</button>
+            <button class="button-update-profile nav-blue-button text-description" (click)="openModalPass()">Modificar contraseña</button>
+            <app-modal-profile [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal-profile>
         </div>
     </div>
 </div>

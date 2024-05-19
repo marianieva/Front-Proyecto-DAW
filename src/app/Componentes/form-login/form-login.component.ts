@@ -12,4 +12,20 @@ export class FormLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showModal: boolean = false;
+  modalType: 'profile' | 'password' = 'profile';
+
+  openModal() {
+    this.modalType = 'profile';
+    this.showModal = true;
+  }
+
+  openModalPass() {
+    this.modalType = 'password';
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
 }

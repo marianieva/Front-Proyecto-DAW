@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'

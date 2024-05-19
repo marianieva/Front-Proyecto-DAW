@@ -12,7 +12,8 @@
             <button class="nav-blue-button title-card" routerLink="">Iniciar sesión</button>
         </div>
         <div class="button-login">
-            <p class="text-card">¿Olvidaste tu contraseña?</p>
+            <p class="text-card" (click)="openModalPass()">¿Olvidaste tu contraseña?</p>
+            <app-modal-profile [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal-profile>
         </div>
     </div>
 </form>

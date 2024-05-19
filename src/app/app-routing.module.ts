@@ -6,6 +6,7 @@ import { CliPedidosComponent } from './Bodies/cli-pedidos/cli-pedidos.component'
 import { CliIncidenciasComponent } from './Bodies/cli-incidencias/cli-incidencias.component';
 import { LoginComponent } from './Bodies/login/login.component';
 import { ErrorComponent } from './Bodies/error/error.component';
+import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
 
 const routes: Routes = [
   
@@ -32,6 +33,9 @@ const routes: Routes = [
   {
     path:'error',
     component : ErrorComponent
+  },
+  { path: '**', 
+    redirectTo: '/error' 
   }
 
 ];

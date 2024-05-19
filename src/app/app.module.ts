@@ -32,6 +32,7 @@ import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incide
 import { LoginComponent } from './Bodies/login/login.component';
 import { FormLoginComponent } from './Componentes/form-login/form-login.component';
 import { ErrorComponent } from './Bodies/error/error.component';
+import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
 
 @NgModule({
   declarations: [	
@@ -62,7 +63,8 @@ import { ErrorComponent } from './Bodies/error/error.component';
       TableTecIncidenciasPendComponent,
       LoginComponent,
       FormLoginComponent,
-      ErrorComponent
+      ErrorComponent,
+      ModalProfileComponent
    ],
   imports: [
     BrowserModule,
