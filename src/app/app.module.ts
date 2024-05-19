@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponenteUnoComponent } from './Componentes/componente-uno/componente-uno.component';
 import { HeaderComponent } from './Componentes/header/header.component';
-import { BodyComponent } from './Componentes/body/body.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { SliderComponent } from './Componentes/slider/slider.component';
 import { CardComponent } from './Componentes/card/card.component';
@@ -19,10 +17,8 @@ import { FormAdminIncidenciaComponent } from './Componentes/form-admin-incidenci
 import { FormAdminAltaUsuarioComponent } from './Componentes/form-admin-alta-usuario/form-admin-alta-usuario.component';
 import { FormAdminImpresoraComponent } from './Componentes/form-admin-impresora/form-admin-impresora.component';
 import { FormAdminModificarUsuarioComponent } from './Componentes/form-admin-modificar-usuario/form-admin-modificar-usuario.component';
-import { AaPruebaBackComponent } from './aa-prueba-back/aa-prueba-back.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { PruebaService } from 'src/app/Services/prueba.service';
 import { CliHomeComponent } from './Bodies/cli-home/cli-home.component';
 import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component';
 import { TableCliEquiposComponent } from './Componentes/table-cli-equipos/table-cli-equipos.component';
@@ -33,13 +29,14 @@ import { TableCliIncidenciasComponent } from './Componentes/table-cli-incidencia
 import { TableTecIncidenciasFinComponent } from './Componentes/table-tec-incidencias-fin/table-tec-incidencias-fin.component';
 import { TableTecAlmacenComponent } from './Componentes/table-tec-almacen/table-tec-almacen.component';
 import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incidencias-pend/table-tec-incidencias-pend.component';
+import { LoginComponent } from './Bodies/login/login.component';
+import { FormLoginComponent } from './Componentes/form-login/form-login.component';
+import { ErrorComponent } from './Bodies/error/error.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
-      ComponenteUnoComponent,
       HeaderComponent,
-      BodyComponent,
       FooterComponent,
       SliderComponent,
       CardComponent,
@@ -53,7 +50,6 @@ import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incide
       FormAdminAltaUsuarioComponent,
       FormAdminImpresoraComponent,
       FormAdminModificarUsuarioComponent,
-      AaPruebaBackComponent,
       CliHomeComponent,
       CliUsuarioComponent,
       TableCliEquiposComponent,
@@ -63,14 +59,17 @@ import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incide
       TableCliIncidenciasComponent,
       TableTecIncidenciasFinComponent,
       TableTecAlmacenComponent,
-      TableTecIncidenciasPendComponent
+      TableTecIncidenciasPendComponent,
+      LoginComponent,
+      FormLoginComponent,
+      ErrorComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [PruebaService,
+  providers: [
     
   ],
   bootstrap: [AppComponent]
