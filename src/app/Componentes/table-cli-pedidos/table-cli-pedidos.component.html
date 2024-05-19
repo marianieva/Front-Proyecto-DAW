@@ -22,15 +22,11 @@
         <tr *ngFor="let pedido of pedidos">
             <td>{{ pedido.idPedido }}</td>
             <td>{{ pedido.fechaPedido }}</td>
-            <td> 
-                <ul>
-                    <p *ngFor="let producto of pedido.productos">{{ producto.nombre }}</p>
-                </ul>
+            <td>
+                <p *ngFor="let producto of pedido.productos">{{ producto.nombre }}</p>
             </td>
-            <td> 
-                <ul>
-                    <p *ngFor="let producto of pedido.productos"> xx </p>
-                </ul>
+            <td>
+                <p *ngFor="let producto of pedido.productos"> xx </p>
             </td>
             <td>{{ pedido.estado }}</td>
         </tr>

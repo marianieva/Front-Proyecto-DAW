@@ -14,7 +14,6 @@ app-header, .router-outlet, app-footer {
     grid-column: 2 / span 10; /* Los componentes ocupan 10 columnas centradas */
 }
 
-
 app-footer {
     height: auto;
 }

@@ -9,7 +9,7 @@ export class UserService {
 
  constructor() {
    // Este valor debería venir de alguna lógica real, aquí se usa un valor fijo para el ejemplo
-   this.userRole = 'tecnico'; // 'tecnico' o 'admin' o 'cliente'
+   this.userRole = 'admin'; // 'tecnico' o 'admin' o 'cliente'
  }
 
  getUserRole(): string {

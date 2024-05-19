@@ -18,6 +18,14 @@
             <app-table-tec-incidencias-pend></app-table-tec-incidencias-pend>
         </div>
     </div>
+    <div class="first-body-container" *ngIf="userRole === 'admin'">
+        <!-- <div class="title-first-body-container title-M">
+            <p class="title-text">Incidencias terminadas</p>
+        </div> -->
+        <div class="admin-incidencias-fin-container">
+            <app-table-admin-incidencias-fin></app-table-admin-incidencias-fin>
+        </div>
+    </div>
     <div class="second-body-container" *ngIf="userRole === 'cliente'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla historico de incidencias</p>
@@ -32,6 +40,14 @@
         </div> -->
         <div class="table-container">
             <app-form-tec-incidencia></app-form-tec-incidencia>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'admin'">
+        <!-- <div class="title-second-body-container title-M">
+            <p class="title-text">Formulario incidencia</p>
+        </div> -->
+        <div class="table-container">
+            <app-form-admin-incidencia></app-form-admin-incidencia>
         </div>
     </div>
 </div>

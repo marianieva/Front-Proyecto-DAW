@@ -27,4 +27,25 @@ export class PedidosService {
     return throwError('Error al recuperar los datos; inténtelo de nuevo más tarde.');
   }
 
+  getPedidosAdmin(): Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8087/pedido/lista')
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
+  getPedidosRecambiosAdmin(): Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8087/pedido/recambios')
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
+  getPedidosConsumiblesAdmin(): Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8087/pedido/consumibles')
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
 }

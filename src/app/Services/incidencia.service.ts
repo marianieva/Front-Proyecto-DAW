@@ -17,6 +17,20 @@ export class IncidenciaService {
     );
   }
   
+  getIncidenciasFinAdmin(): Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8087/incidencia/finalizdas')
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
+  getIncidenciasPenAdmin(): Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8087/incidencia/pendientes')
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
   private findError(error: HttpErrorResponse) {
     console.error('Ha ocurrido un error:', error);
     return throwError('Error al recuperar los datos; inténtelo de nuevo más tarde.');

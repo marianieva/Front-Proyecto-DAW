@@ -2,7 +2,7 @@
     <div class="back-home">
         <button class="button-back-home nav-blue-button title-card" routerLink="">Volver al inicio</button>
     </div>
-    <div class="first-body-container">
+    <div class="first-body-container" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">
         <!-- <div class="title-first-body-container title-M">
             <p class="title-text">Formulario alta pedido consumibles</p>
         </div> -->
@@ -20,7 +20,7 @@
     </div>
     <div class="second-body-container" *ngIf="userRole === 'tecnico'">
         <div class="title-second-body-container title-M">
-            <p class="title-text">Tabla historico de pedidos</p>
+            <p class="title-text">Tabla histórico de pedidos</p>
         </div>
         <div class="table-container">
             <app-table-cli-pedidos></app-table-cli-pedidos>
@@ -32,6 +32,11 @@
         </div>
         <div class="table-container">
             <app-table-tec-almacen></app-table-tec-almacen>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'admin'">
+        <div class="table-container">
+            <app-table-admin-pedidos></app-table-admin-pedidos>
         </div>
     </div>
 </div>
