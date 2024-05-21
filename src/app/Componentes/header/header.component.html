@@ -6,7 +6,7 @@
         <div class="buttons-container">
             <button class="nav-orange-button title-card" routerLink="incidencias" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Incidencias</button>
             <button class="nav-orange-button title-card" routerLink="pedidos" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Pedidos</button>
-            <button class="nav-orange-button title-card" routerLink="gestion" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
             <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
             <button class="nav-blue-button title-card" routerLink="login" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Cerrar sesión</button>
         </div>
@@ -19,7 +19,7 @@
             <button class="nav-orange-button title-card" routerLink="pedidos" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Pedidos</button>
         </div>
         <div class="buttons-nav-tablet-container2">
-            <button class="nav-orange-button title-card" routerLink="gestion" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
             <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
             <button class="nav-blue-button title-card" routerLink="login" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Cerrar sesión</button>
         </div>

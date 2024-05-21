@@ -1,0 +1,52 @@
+<div class="admin-usuarios-buttons-show">
+    <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewUser()">Nuevo usuario</button>
+    <button class="btn-filter-inc nav-orange-button title-card" (click)="showUpdateUser()">Modificar usuario</button>
+    <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewPrint()">Nuevo equipo</button>
+    <app-modal-profile [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal-profile>
+</div>
+<div class="admin-usuarios-buttons">
+    <button class="btn-filter-inc nav-blue-button title-card" (click)="changeView('all')">Todos los usuarios</button>
+    <button class="btn-filter-inc nav-blue-button title-card" (click)="changeView('tecnicos')">Técnicos</button>
+    <button class="btn-filter-inc nav-blue-button title-card" (click)="changeView('clientes')">Clientes</button>
+</div>
+<div class="title-container title-M">
+    <p class="title-text" *ngIf="currentView === 'all'">Todos los usuarios</p>
+    <p class="title-text" *ngIf="currentView === 'tecnicos'">Técnicos</p>
+    <p class="title-text" *ngIf="currentView === 'clientes'">Clientes</p>
+</div>
+<div class="table-admin-usuarios">
+    <table class="text-card card-shadow">
+        <thead>
+            <tr>
+                <th>Nombre y apellidos</th>
+                <th>Dirección</th>
+                <th>Zona</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="loading">
+                <td colspan="7">Cargando datos...</td>
+            </tr>
+            <tr *ngIf="error">
+                <td colspan="7">{{ error }}</td>
+            </tr>
+            <tr *ngIf="!loading && !error && usuarios.length === 0">
+                <td colspan="7">No hay datos disponibles</td>
+            </tr>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.nombre }} {{ usuario.apellidos }}</td>
+                <td>{{ usuario.direccion }}</td>
+                <td>{{ usuario.zona.nombreZona }}</td>
+                <td>{{ usuario.rol.nombreRol }}</td>
+                <td> estado </td>
+                <td class="table-buttons-options">
+                    <button id="{{ usuario.idUsuario }}" class="button-form first-button text-card">Modificar</button>
+                    <button id="{{ usuario.idUsuario }}" class="button-form first-button text-card">Dar de baja</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

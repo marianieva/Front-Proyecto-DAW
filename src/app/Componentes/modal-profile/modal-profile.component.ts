@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 export class ModalProfileComponent {
 
   @Input() showModal: boolean = false;
-  @Input() modalType: 'profile' | 'password' = 'profile';
+  @Input() modalType: 'profile' | 'password' | 'new-user' | 'update-user' | 'new-print' = 'profile';
   @Output() closeModal = new EventEmitter<void>();
 
   close() {

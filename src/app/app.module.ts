@@ -35,6 +35,7 @@ import { ErrorComponent } from './Bodies/error/error.component';
 import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
 import { TableAdminIncidenciasFinComponent } from './Componentes/table-admin-incidencias-fin/table-admin-incidencias-fin.component';
 import { TableAdminPedidosComponent } from './Componentes/table-admin-pedidos/table-admin-pedidos.component';
+import { TableAdminUsuariosComponent } from './Componentes/table-admin-usuarios/table-admin-usuarios.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { TableAdminPedidosComponent } from './Componentes/table-admin-pedidos/ta
       ErrorComponent,
       ModalProfileComponent,
       TableAdminIncidenciasFinComponent,
-      TableAdminPedidosComponent
+      TableAdminPedidosComponent,
+      TableAdminUsuariosComponent
    ],
   imports: [
     BrowserModule,

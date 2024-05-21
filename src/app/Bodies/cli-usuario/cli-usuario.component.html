@@ -2,7 +2,7 @@
     <div class="back-home">
         <button class="button-back-home nav-blue-button title-card" routerLink="">Volver al inicio</button>
     </div>
-    <div class="first-body-container">
+    <div class="first-body-container" *ngIf="userRole === 'cliente'  || userRole === 'tecnico'">
         <div class="profile-container">
             <app-profile-card></app-profile-card>
         </div>
@@ -24,6 +24,11 @@
         </div>
         <div class="table-container">
             <app-table-tec-incidencias-fin></app-table-tec-incidencias-fin>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'admin'">
+        <div class="table-container">
+            <app-table-admin-usuarios></app-table-admin-usuarios>
         </div>
     </div>
 </div>

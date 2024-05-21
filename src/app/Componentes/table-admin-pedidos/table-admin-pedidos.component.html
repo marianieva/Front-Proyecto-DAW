@@ -23,13 +23,13 @@
         </thead>
         <tbody>
             <tr *ngIf="loading">
-                <td colspan="6">Cargando datos...</td>
+                <td colspan="7">Cargando datos...</td>
             </tr>
             <tr *ngIf="error">
-                <td colspan="6">{{ error }}</td>
+                <td colspan="7">{{ error }}</td>
             </tr>
             <tr *ngIf="!loading && !error && pedidos.length === 0">
-                <td colspan="6">No hay datos disponibles</td>
+                <td colspan="7">No hay datos disponibles</td>
             </tr>
             <tr *ngFor="let pedido of pedidos">
                 <td>{{ pedido.idPedido }}</td>
@@ -41,7 +41,7 @@
                 </td>
                 <td>{{ pedido.estado }}</td>
                 <td class="table-buttons-options">
-                    <button id="{{ pedido.idPedido }}" class="button-form first-button text-card">Aceptar pedido</button>
+                    <button id="{{ pedido.idPedido }}" class="button-form first-button text-card">Modificar</button>
                 </td>
             </tr>
         </tbody>
