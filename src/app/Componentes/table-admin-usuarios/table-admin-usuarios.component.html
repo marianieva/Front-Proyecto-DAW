@@ -2,7 +2,7 @@
     <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewUser()">Nuevo usuario</button>
     <button class="btn-filter-inc nav-orange-button title-card" (click)="showUpdateUser()">Modificar usuario</button>
     <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewPrint()">Nuevo equipo</button>
-    <app-modal-profile [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal-profile>
+    <app-modal [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal>
 </div>
 <div class="admin-usuarios-buttons">
     <button class="btn-filter-inc nav-blue-button title-card" (click)="changeView('all')">Todos los usuarios</button>

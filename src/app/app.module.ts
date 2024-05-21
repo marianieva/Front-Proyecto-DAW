@@ -19,12 +19,12 @@ import { FormAdminImpresoraComponent } from './Componentes/form-admin-impresora/
 import { FormAdminModificarUsuarioComponent } from './Componentes/form-admin-modificar-usuario/form-admin-modificar-usuario.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { CliHomeComponent } from './Bodies/cli-home/cli-home.component';
-import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component';
+import { HomeComponent } from './Bodies/home/home.component';
+import { UsuarioComponent } from './Bodies/usuario/usuario.component';
 import { TableCliEquiposComponent } from './Componentes/table-cli-equipos/table-cli-equipos.component';
-import { CliPedidosComponent } from './Bodies/cli-pedidos/cli-pedidos.component';
+import { PedidosComponent } from './Bodies/pedidos/pedidos.component';
 import { TableCliPedidosComponent } from './Componentes/table-cli-pedidos/table-cli-pedidos.component';
-import { CliIncidenciasComponent } from './Bodies/cli-incidencias/cli-incidencias.component';
+import { IncidenciasComponent } from './Bodies/incidencias/incidencias.component';
 import { TableCliIncidenciasComponent } from './Componentes/table-cli-incidencias/table-cli-incidencias.component';
 import { TableTecIncidenciasFinComponent } from './Componentes/table-tec-incidencias-fin/table-tec-incidencias-fin.component';
 import { TableTecAlmacenComponent } from './Componentes/table-tec-almacen/table-tec-almacen.component';
@@ -32,7 +32,7 @@ import { TableTecIncidenciasPendComponent } from './Componentes/table-tec-incide
 import { LoginComponent } from './Bodies/login/login.component';
 import { FormLoginComponent } from './Componentes/form-login/form-login.component';
 import { ErrorComponent } from './Bodies/error/error.component';
-import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
+import { ModalComponent } from './Componentes/modal/modal.component';
 import { TableAdminIncidenciasFinComponent } from './Componentes/table-admin-incidencias-fin/table-admin-incidencias-fin.component';
 import { TableAdminPedidosComponent } from './Componentes/table-admin-pedidos/table-admin-pedidos.component';
 import { TableAdminUsuariosComponent } from './Componentes/table-admin-usuarios/table-admin-usuarios.component';
@@ -55,12 +55,12 @@ import { TableAdminUsuariosComponent } from './Componentes/table-admin-usuarios/
       FormAdminAltaUsuarioComponent,
       FormAdminImpresoraComponent,
       FormAdminModificarUsuarioComponent,
-      CliHomeComponent,
-      CliUsuarioComponent,
+      HomeComponent,
+      UsuarioComponent,
       TableCliEquiposComponent,
-      CliPedidosComponent,
+      PedidosComponent,
       TableCliPedidosComponent,
-      CliIncidenciasComponent,
+      IncidenciasComponent,
       TableCliIncidenciasComponent,
       TableTecIncidenciasFinComponent,
       TableTecAlmacenComponent,
@@ -68,7 +68,7 @@ import { TableAdminUsuariosComponent } from './Componentes/table-admin-usuarios/
       LoginComponent,
       FormLoginComponent,
       ErrorComponent,
-      ModalProfileComponent,
+      ModalComponent,
       TableAdminIncidenciasFinComponent,
       TableAdminPedidosComponent,
       TableAdminUsuariosComponent

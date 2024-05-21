@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CliHomeComponent } from './Bodies/cli-home/cli-home.component';
-import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component';
-import { CliPedidosComponent } from './Bodies/cli-pedidos/cli-pedidos.component';
-import { CliIncidenciasComponent } from './Bodies/cli-incidencias/cli-incidencias.component';
+import { HomeComponent } from './Bodies/home/home.component';
+import { UsuarioComponent } from './Bodies/usuario/usuario.component';
+import { PedidosComponent } from './Bodies/pedidos/pedidos.component';
+import { IncidenciasComponent } from './Bodies/incidencias/incidencias.component';
 import { LoginComponent } from './Bodies/login/login.component';
 import { ErrorComponent } from './Bodies/error/error.component';
-import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
+import { ModalComponent } from './Componentes/modal/modal.component';
 
 const routes: Routes = [
   
@@ -16,19 +16,19 @@ const routes: Routes = [
   },
   {
     path:'',
-    component : CliHomeComponent
+    component : HomeComponent
   },
   {
     path:'usuario',
-    component : CliUsuarioComponent
+    component : UsuarioComponent
   },
   {
     path:'pedidos', 
-    component: CliPedidosComponent
+    component: PedidosComponent
   },
   {
     path:'incidencias',
-    component : CliIncidenciasComponent
+    component : IncidenciasComponent
   },
   {
     path:'error',

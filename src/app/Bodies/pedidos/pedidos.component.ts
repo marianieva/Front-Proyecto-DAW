@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
-  selector: 'app-cli-incidencias',
-  templateUrl: './cli-incidencias.component.html',
-  styleUrls: ['./cli-incidencias.component.css']
+  selector: 'app-pedidos',
+  templateUrl: './pedidos.component.html',
+  styleUrls: ['./pedidos.component.css']
 })
-export class CliIncidenciasComponent implements OnInit {
+export class PedidosComponent implements OnInit {
 
   userRole: string = '';
 
@@ -15,4 +15,5 @@ export class CliIncidenciasComponent implements OnInit {
   ngOnInit(): void {
     this.userRole = this.userService.getUserRole();
   }
+  
 }

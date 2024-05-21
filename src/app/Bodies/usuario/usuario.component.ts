@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../Services/user.service';
 
 @Component({
-  selector: 'app-cli-usuario',
-  templateUrl: './cli-usuario.component.html',
-  styleUrls: ['./cli-usuario.component.css']
+  selector: 'app-usuario',
+  templateUrl: './usuario.component.html',
+  styleUrls: ['./usuario.component.css']
 })
-export class CliUsuarioComponent implements OnInit {
+export class UsuarioComponent implements OnInit {
   
   userRole: string = '';
 
