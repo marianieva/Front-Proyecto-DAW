@@ -7,7 +7,7 @@
             <app-profile-card></app-profile-card>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'cliente'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_CLIENTE'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla de equipos contratados</p>
         </div>
@@ -18,7 +18,7 @@
             <button class="button-large nav-blue-button title-card">Ver Histórico de pedidos</button>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla de incidencias finalizadas</p>
         </div>

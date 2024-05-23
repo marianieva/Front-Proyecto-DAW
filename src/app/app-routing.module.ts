@@ -6,7 +6,12 @@ import { PedidosComponent } from './Bodies/pedidos/pedidos.component';
 import { IncidenciasComponent } from './Bodies/incidencias/incidencias.component';
 import { LoginComponent } from './Bodies/login/login.component';
 import { ErrorComponent } from './Bodies/error/error.component';
+<<<<<<< Updated upstream
 import { ModalComponent } from './Componentes/modal/modal.component';
+=======
+import { ModalProfileComponent } from './Componentes/modal-profile/modal-profile.component';
+import { AuthGuard } from 'src/guard/auth.guard';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   
@@ -16,7 +21,12 @@ const routes: Routes = [
   },
   {
     path:'',
+<<<<<<< Updated upstream
     component : HomeComponent
+=======
+    component : CliHomeComponent,
+    canActivate: [AuthGuard]
+>>>>>>> Stashed changes
   },
   {
     path:'usuario',
@@ -24,11 +34,21 @@ const routes: Routes = [
   },
   {
     path:'pedidos', 
+<<<<<<< Updated upstream
     component: PedidosComponent
   },
   {
     path:'incidencias',
     component : IncidenciasComponent
+=======
+    component: CliPedidosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path:'incidencias',
+    component : CliIncidenciasComponent,
+    canActivate: [AuthGuard]
+>>>>>>> Stashed changes
   },
   {
     path:'error',

@@ -10,7 +10,7 @@
             <app-form-cli-incidencia></app-form-cli-incidencia>
         </div>
     </div>
-    <div class="first-body-container" *ngIf="userRole === 'tecnico'">
+    <div class="first-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <!-- <div class="title-first-body-container title-M">
             <p class="title-text">Formulario alta pedido consumibles</p>
         </div> -->
@@ -18,7 +18,7 @@
             <app-table-tec-incidencias-pend></app-table-tec-incidencias-pend>
         </div>
     </div>
-    <div class="first-body-container" *ngIf="userRole === 'admin'">
+    <div class="first-body-container" *ngIf="userRole === 'ROL_ADMIN'">
         <!-- <div class="title-first-body-container title-M">
             <p class="title-text">Incidencias terminadas</p>
         </div> -->
@@ -26,7 +26,7 @@
             <app-table-admin-incidencias-fin></app-table-admin-incidencias-fin>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'cliente'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_CLIENTE'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla historico de incidencias</p>
         </div>
@@ -34,7 +34,7 @@
             <app-table-cli-incidencias></app-table-cli-incidencias>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <!-- <div class="title-second-body-container title-M">
             <p class="title-text">Formulario incidencia</p>
         </div> -->
@@ -42,7 +42,7 @@
             <app-form-tec-incidencia></app-form-tec-incidencia>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'admin'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_ADMIN'">
         <!-- <div class="title-second-body-container title-M">
             <p class="title-text">Formulario incidencia</p>
         </div> -->

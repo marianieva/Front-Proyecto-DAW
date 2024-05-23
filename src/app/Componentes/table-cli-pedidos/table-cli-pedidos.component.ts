@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewChecked, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { PedidosService } from '../../Services/pedido.service';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-table-cli-pedidos',
@@ -11,7 +12,9 @@ export class TableCliPedidosComponent implements OnInit {
   pedidos: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
-  idUsuario= 3;
+  idUsuarioString = localStorage.getItem('userId');
+
+  idUsuario = Number(this.idUsuarioString);
 
   constructor(public service: PedidosService) { }
 

@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
   styleUrls: ['./form-login.component.css']
 })
-export class FormLoginComponent implements OnInit {
+export class FormLoginComponent{
 
-  constructor() { }
+  username: string = '';
+  password: string = '';
+  errorMessage: string = '';
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService, private router: Router) { }
+
+  login(): void {
+    this.authService.login({ username: this.username, password: this.password }).subscribe({
+      next: response => {
+        this.router.navigate(['/']);
+      },
+      error: err => {
+        this.errorMessage = 'Login failed. Please check your username and password.';
+        console.error('Login failed', err);
+      }
+    });
   }
 
   showModal: boolean = false;

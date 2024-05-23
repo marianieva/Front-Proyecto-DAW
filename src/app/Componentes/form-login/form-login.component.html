@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <form class="form-login-container form-container one-column"  action="">
     <div class="form-first-column title-card">
         <div class="input-login">
@@ -15,5 +16,27 @@
             <p class="text-card" (click)="openModalPass()">¿Olvidaste tu contraseña?</p>
             <app-modal [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal>
         </div>
+=======
+
+
+<form (ngSubmit)="login()" class="form-login-container form-container one-column" >
+  <div class="form-first-column title-card">
+    <div class="input-login"> 
+      <label for="username">username</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+>>>>>>> Stashed changes
     </div>
+    
+    <div class="input-login">
+      <label for="password">password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+      <div class="button-login">
+          <button class="nav-blue-button title-card"  type="submit">Iniciar sesión</button>
+      </div>
+      <div class="button-login">
+          <p class="text-card" (click)="openModalPass()">¿Olvidaste tu contraseña?</p>
+          <app-modal-profile [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal-profile>
+      </div>
+  </div>
 </form>

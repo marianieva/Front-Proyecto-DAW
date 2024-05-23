@@ -8,9 +8,9 @@ import { forkJoin } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
- // Supongamos que el rol se obtiene de alguna manera, por ejemplo, de un API
- private userRole: string;
+  private userRole: string;
 
+<<<<<<< Updated upstream
  constructor(private http: HttpClient) {
    // Este valor debería venir de alguna lógica real, aquí se usa un valor fijo para el ejemplo
    this.userRole = 'admin'; // 'tecnico' o 'admin' o 'cliente'
@@ -53,4 +53,15 @@ getClientesAdmin(): Observable<any[]>{
   );
 }
 
+=======
+  constructor() {
+    // Obtén el rol del localStorage y maneja el caso en que pueda ser null
+    const role = localStorage.getItem('roles');
+    this.userRole = role ? role : 'ROL_CLIENTE'; // Default role if none found
+  }
+
+  getUserRole(): string {
+    return this.userRole;
+  }
+>>>>>>> Stashed changes
 }
