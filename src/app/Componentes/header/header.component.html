@@ -4,19 +4,11 @@
             <img src="assets/images/Logo.png" alt="Logo FixPrint" class="logo" routerLink="">
         </div>
         <div class="buttons-container">
-<<<<<<< Updated upstream
-            <button class="nav-orange-button title-card" routerLink="incidencias" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Incidencias</button>
-            <button class="nav-orange-button title-card" routerLink="pedidos" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Pedidos</button>
-            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
-            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
-            <button class="nav-blue-button title-card" routerLink="login" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Cerrar sesión</button>
-=======
             <button class="nav-orange-button title-card" routerLink="incidencias" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO' || userRole === 'ROL_ADMIN'">Incidencias</button>
             <button class="nav-orange-button title-card" routerLink="pedidos" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO' || userRole === 'ROL_ADMIN'">Pedidos</button>
-            <button class="nav-orange-button title-card" routerLink="gestion" *ngIf="userRole === 'ROL_ADMIN'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'ROL_ADMIN'">Gestión de usuarios</button>
             <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO'">Área de usuario</button>
             <button (click)="logout()" class="nav-blue-button title-card" routerLink="login" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO' || userRole === 'ROL_ADMIN'">Cerrar sesión</button>
->>>>>>> Stashed changes
         </div>
     </div>
 </div>
@@ -27,15 +19,9 @@
             <button class="nav-orange-button title-card" routerLink="pedidos" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO' || userRole === 'ROL_ADMIN'">Pedidos</button>
         </div>
         <div class="buttons-nav-tablet-container2">
-<<<<<<< Updated upstream
-            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'admin'">Gestión de usuarios</button>
-            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">Área de usuario</button>
-            <button class="nav-blue-button title-card" routerLink="login" *ngIf="userRole === 'cliente' || userRole === 'tecnico' || userRole === 'admin'">Cerrar sesión</button>
-=======
-            <button class="nav-orange-button title-card" routerLink="gestion" *ngIf="userRole === 'ROL_ADMIN'">Gestión de usuarios</button>
+            <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'ROL_ADMIN'">Gestión de usuarios</button>
             <button class="nav-orange-button title-card" routerLink="usuario" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO'">Área de usuario</button>
             <button (click)="logout()" class="nav-blue-button title-card" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO' || userRole === 'ROL_ADMIN'">Cerrar sesión</button>
->>>>>>> Stashed changes
         </div>
     </div>
 </div>

@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./table-admin-incidencias-fin.component.css'],
   providers: [DatePipe]
 })
-export class TableAdminIncidenciasFinComponent implements OnInit, AfterViewChecked {
+export class TableAdminIncidenciasFinComponent implements OnInit{
 
   incidencias: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
@@ -18,10 +18,6 @@ export class TableAdminIncidenciasFinComponent implements OnInit, AfterViewCheck
 
   constructor(public service: IncidenciaService, private datePipe: DatePipe) { }
   
-  ngAfterViewChecked(): void {
-    throw new Error('Method not implemented.');
-  }
-
   ngOnInit(): void {
     this.getIncidencias();
   }

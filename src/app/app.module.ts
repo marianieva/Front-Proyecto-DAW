@@ -18,15 +18,9 @@ import { FormAdminAltaUsuarioComponent } from './Componentes/form-admin-alta-usu
 import { FormAdminImpresoraComponent } from './Componentes/form-admin-impresora/form-admin-impresora.component';
 import { FormAdminModificarUsuarioComponent } from './Componentes/form-admin-modificar-usuario/form-admin-modificar-usuario.component';
 
-<<<<<<< Updated upstream
-import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from './Bodies/home/home.component';
 import { UsuarioComponent } from './Bodies/usuario/usuario.component';
-=======
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { CliHomeComponent } from './Bodies/cli-home/cli-home.component';
-import { CliUsuarioComponent } from './Bodies/cli-usuario/cli-usuario.component';
->>>>>>> Stashed changes
 import { TableCliEquiposComponent } from './Componentes/table-cli-equipos/table-cli-equipos.component';
 import { PedidosComponent } from './Bodies/pedidos/pedidos.component';
 import { TableCliPedidosComponent } from './Componentes/table-cli-pedidos/table-cli-pedidos.component';
@@ -41,13 +35,10 @@ import { ErrorComponent } from './Bodies/error/error.component';
 import { ModalComponent } from './Componentes/modal/modal.component';
 import { TableAdminIncidenciasFinComponent } from './Componentes/table-admin-incidencias-fin/table-admin-incidencias-fin.component';
 import { TableAdminPedidosComponent } from './Componentes/table-admin-pedidos/table-admin-pedidos.component';
-<<<<<<< Updated upstream
 import { TableAdminUsuariosComponent } from './Componentes/table-admin-usuarios/table-admin-usuarios.component';
-=======
 import { AuthInterceptor } from './Interceptor/auth.interceptor';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './Services/auth.service';
->>>>>>> Stashed changes
 
 
 @NgModule({

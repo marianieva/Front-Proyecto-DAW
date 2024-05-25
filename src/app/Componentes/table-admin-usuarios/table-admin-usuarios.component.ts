@@ -6,7 +6,7 @@ import { UserService } from '../../Services/user.service';
   templateUrl: './table-admin-usuarios.component.html',
   styleUrls: ['./table-admin-usuarios.component.css']
 })
-export class TableAdminUsuariosComponent implements OnInit, AfterViewChecked {
+export class TableAdminUsuariosComponent implements OnInit{
 
   usuarios: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
@@ -15,10 +15,6 @@ export class TableAdminUsuariosComponent implements OnInit, AfterViewChecked {
   finalized: any;
 
   constructor(public service: UserService) { }
-    
-  ngAfterViewChecked(): void {
-      throw new Error('Method not implemented.');
-    }
   
     ngOnInit(): void {
       this.getUsuarios();

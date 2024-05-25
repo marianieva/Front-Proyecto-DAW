@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -18,13 +18,14 @@ export class FormLoginComponent{
   login(): void {
     this.authService.login({ username: this.username, password: this.password }).subscribe({
       next: response => {
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       },
       error: err => {
         this.errorMessage = 'Login failed. Please check your username and password.';
         console.error('Login failed', err);
       }
-    });
+    }); 
+    
   }
 
   showModal: boolean = false;

@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./table-admin-pedidos.component.css'],
   providers: [DatePipe]
 })
-export class TableAdminPedidosComponent implements OnInit, AfterViewChecked  {
+export class TableAdminPedidosComponent implements OnInit  {
 
   pedidos: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
@@ -18,9 +18,7 @@ export class TableAdminPedidosComponent implements OnInit, AfterViewChecked  {
 
   constructor(public service: PedidosService, private datePipe: DatePipe) { }
    
-  ngAfterViewChecked(): void {
-    throw new Error('Method not implemented.');
-  }
+  
 
   ngOnInit(): void {
     this.getPedidos();

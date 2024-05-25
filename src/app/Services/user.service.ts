@@ -10,11 +10,11 @@ import { forkJoin } from 'rxjs';
 export class UserService {
   private userRole: string;
 
-<<<<<<< Updated upstream
- constructor(private http: HttpClient) {
-   // Este valor debería venir de alguna lógica real, aquí se usa un valor fijo para el ejemplo
-   this.userRole = 'admin'; // 'tecnico' o 'admin' o 'cliente'
- }
+  constructor(private http: HttpClient) {
+    // Obtén el rol del localStorage y maneja el caso en que pueda ser null
+    const role = localStorage.getItem('roles');
+    this.userRole = role ? role : 'ROL_INVITADO'; // Default role if none found
+  }
 
  getUserRole(): string {
    return this.userRole;
@@ -53,15 +53,5 @@ getClientesAdmin(): Observable<any[]>{
   );
 }
 
-=======
-  constructor() {
-    // Obtén el rol del localStorage y maneja el caso en que pueda ser null
-    const role = localStorage.getItem('roles');
-    this.userRole = role ? role : 'ROL_CLIENTE'; // Default role if none found
-  }
-
-  getUserRole(): string {
-    return this.userRole;
-  }
->>>>>>> Stashed changes
+ 
 }

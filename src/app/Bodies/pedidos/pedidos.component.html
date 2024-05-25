@@ -2,7 +2,7 @@
     <div class="back-home">
         <button class="button-back-home nav-blue-button title-card" routerLink="">Volver al inicio</button>
     </div>
-    <div class="first-body-container" *ngIf="userRole === 'cliente' || userRole === 'tecnico'">
+    <div class="first-body-container" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO'">
         <!-- <div class="title-first-body-container title-M">
             <p class="title-text">Formulario alta pedido consumibles</p>
         </div> -->
@@ -10,7 +10,7 @@
             <app-form-cli-alta-pedido></app-form-cli-alta-pedido>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'cliente'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_CLIENTE'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla historico de pedidos</p>
         </div>
@@ -18,7 +18,7 @@
             <app-table-cli-pedidos></app-table-cli-pedidos>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Tabla histórico de pedidos</p>
         </div>
@@ -26,7 +26,7 @@
             <app-table-cli-pedidos></app-table-cli-pedidos>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'tecnico'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <div class="title-second-body-container title-M">
             <p class="title-text">Almacén de pedidos</p>
         </div>
@@ -34,7 +34,7 @@
             <app-table-tec-almacen></app-table-tec-almacen>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'admin'">
+    <div class="second-body-container" *ngIf="userRole === 'ROL_ADMIN'">
         <div class="table-container">
             <app-table-admin-pedidos></app-table-admin-pedidos>
         </div>
