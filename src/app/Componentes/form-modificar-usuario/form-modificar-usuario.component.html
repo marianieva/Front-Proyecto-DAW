@@ -1,24 +1,24 @@
 <div class="title-form title-M">
     <p>Formulario para modificar datos personales</p>
 </div>
-<form class="form-modificar-usuario-container form-container one-column"  action="">
+<form class="form-modificar-usuario-container form-container one-column" (ngSubmit)="updateUser2()">
     <div class="form-first-column title-card">
         <div class="input">
             <p>Username:</p>
-            <input type="text" class="input text-card" placeholder="Username">
+            <input type="text" class="input text-card" name="username" [(ngModel)]="username">
         </div>
         <div class="input">
             <p>Nombre:</p>
-            <input type="text" class="input text-card" placeholder="Nombre">
+            <input type="text" class="input text-card" name="nombre" [(ngModel)]="nombre">
         </div>
         <div class="input">
             <p>Apellidos:</p>
-            <input type="text" class="input text-card" placeholder="Apellidos">
+            <input type="text" class="input text-card" name="apellidos" [(ngModel)]="apellidos">
         </div>
         <div class="input">
             <p>Dirección:</p>
-            <textarea name="direccion" id="direccion" rows="3" class="textarea text-card" placeholder="Indique su dirección"></textarea>
+            <textarea name="direccion" id="direccion" rows="3" class="textarea text-card" [(ngModel)]="direccion"></textarea>
         </div>
-        <button class="button-form first-button title-card">Actualizar perfil</button>
+        <button type="submit" class="button-form first-button title-card">Actualizar perfil</button>
     </div>
 </form>

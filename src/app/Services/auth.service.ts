@@ -31,7 +31,7 @@ export class AuthService {
                 apellidos: string, 
                 username: string,
                 password: string,
-                roles: Array<string>,
+                rol: string,
                 zona: number,
                 direccion: string
               }): Observable<any>{
