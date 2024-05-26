@@ -19,6 +19,20 @@ export class UserService {
  getUserRole(): string {
    return this.userRole;
  }
+
+ getUser(userId: number): Observable<any[]> {
+  return this.http.get<any[]>(`http://localhost:8087/usuario/uno/${userId}`)
+  .pipe(
+    catchError(this.findError)
+  );
+ }
+
+ updateUser(usuario: any): Observable<any> {
+  return this.http.post<any>(`http://localhost:8087/usuario/modificar`, usuario)
+  .pipe(
+    catchError(this.findError)
+  );
+ }
   
  private findError(error: HttpErrorResponse) {
   console.error('Error al recuperar los datos:', error.message);
@@ -52,6 +66,21 @@ getClientesAdmin(): Observable<any[]>{
     catchError(this.findError)
   );
 }
+
+getRoles(): Observable<any[]>{
+  return this.http.get<any[]>('http://localhost:8087/usuario/roles')
+  .pipe(
+    catchError(this.findError)
+  );
+}
+
+getZonas(): Observable<any[]>{
+  return this.http.get<any[]>('http://localhost:8087/usuario/zonas')
+  .pipe(
+    catchError(this.findError)
+  );
+}
+
 
  
 }

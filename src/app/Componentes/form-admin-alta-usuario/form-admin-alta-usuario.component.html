@@ -28,15 +28,17 @@
     <div class="input">
       <p>Zona:</p>
       <select name="zona" id="select-zona" class="select text-card" [(ngModel)]="zona" required>
-        <option value="1">Opción 1</option>
-        <option value="2">Opción 2</option>
+        <option *ngFor="let zona of todasZonas" [value]="zona.idZona">
+            {{ zona.nombreZona }}
+        </option>
       </select>
     </div>
     <div class="input">
       <p>Rol:</p>
-      <select name="rol" id="select-rol" class="select text-card" [(ngModel)]="roles" multiple required>
-        <option value="ROL_CLIENTE">Cliente</option>
-        <option value="ROL_ADMIN">Admin</option>
+      <select name="rol" id="select-rol" class="select text-card" [(ngModel)]="roles" required>
+        <option *ngFor="let role of todosRoles" [value]="role.idRol">
+          {{ getRoleLabel(role.rolNombre) }}
+        </option>
       </select>
     </div>
     <button class="button-form first-button title-card" type="submit">Crear usuario</button>
