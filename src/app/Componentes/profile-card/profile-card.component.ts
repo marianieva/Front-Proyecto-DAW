@@ -13,6 +13,10 @@ export class ProfileCardComponent implements OnInit {
   userIdString: string | null = localStorage.getItem('userId');
   userId: number | null = this.userIdString ? parseInt(this.userIdString) : null;
   user: any;
+
+  userIdString: string | null = localStorage.getItem('userId');
+  userId: number | null = this.userIdString ? parseInt(this.userIdString) : null;
+  user: any;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {

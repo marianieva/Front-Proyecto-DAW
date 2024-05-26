@@ -23,7 +23,7 @@ export class FormAdminAltaUsuarioComponent{
   error: string = '';
 
   nombre: string = '';
-  apellidos:string = ''
+  apellidos:string = '';
   username: string = '';
   password: string = '';
   rol: string = '';
