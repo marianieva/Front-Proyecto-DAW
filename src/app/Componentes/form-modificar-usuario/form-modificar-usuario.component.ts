@@ -19,7 +19,7 @@ export class FormModificarUsuarioComponent implements OnInit {
   direccion: string = '';
   idUsuario  = Number(localStorage.getItem('userId'));
 
-  constructor(private userService: UserService,private authService: AuthService, private router: Routerprivate userService: UserService) { }
+  constructor(private userService: UserService,private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadUser();
