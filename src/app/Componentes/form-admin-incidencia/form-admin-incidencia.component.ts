@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAdminIncidenciaComponent implements OnInit {
 
+  error: string = '';
+  success:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

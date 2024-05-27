@@ -15,5 +15,7 @@
             <textarea name="observaciones" id="observaciones" rows="3" class="textarea text-card" placeholder="Indique su incidencia"></textarea>
         </div>
         <button class="button-form first-button title-card">Enviar incidencia</button>
+        <p class="error text-card" *ngIf="error">Error al enviar incidencia</p>
+        <p class="success text-card" *ngIf="success">Incidencia enviada correctamente</p>
     </div>
 </form>

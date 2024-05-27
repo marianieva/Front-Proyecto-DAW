@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAdminImpresoraComponent implements OnInit {
 
+  error: string = '';
+  success:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

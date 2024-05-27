@@ -21,6 +21,7 @@ interface Zona {
 export class FormAdminAltaUsuarioComponent{
 
   error: string = '';
+  success:boolean = false;
 
   nombre: string = '';
   apellidos:string = '';
@@ -88,7 +89,10 @@ export class FormAdminAltaUsuarioComponent{
         zona: this.zona,
         direccion: this.direccion}).subscribe({
           next: response => {
-            this.router.navigate(['/'])
+            this.success = true;
+          },
+          error: (err) => {
+            this.error = err;
           }
         });
   }

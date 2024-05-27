@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-form-admin-modificar-usuario',
@@ -7,9 +10,66 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAdminModificarUsuarioComponent implements OnInit {
 
-  constructor() { }
+  error: string = '';
+  success: boolean = false;
+
+  idUsuarioString: string | null = localStorage.getItem('idUserUpdate')
+
+  idUsuario: number = this. idUsuarioString ? parseInt(this. idUsuarioString): 0;
+
+  nombre: string = '';
+  apellidos:string = '';
+  username: string = '';
+  password: string = '';
+  direccion: string = '';
+
+  constructor(private authService: AuthService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    
+    console.log('antes de getUser', this.idUsuario);
+    if (this.idUsuario !== null) {
+      this.getUser(this.idUsuario);
+    }
+    console.log('después de getUser',this.idUsuario);
   }
+
+  getUser(idUsuario: number): void {
+    if (this.idUsuario !== null) {
+    this.userService.getUser(idUsuario).subscribe({
+      next: (userData: any) => {
+        // Asigna los datos del usuario a las propiedades del componente
+        this.nombre = userData.nombre;
+        this.apellidos = userData.apellidos;
+        this.username = userData.username;
+        this.direccion = userData.direccion;
+        console.log(userData)
+      },
+      error: (err) => {
+        console.error(err); // Maneja el error
+      }
+
+    });
+  }
+  }
+
+  updateUser2(): void{
+    this.userService.updateUser({
+      idUsuario: this.idUsuario,
+      username: this.username,
+      nombre: this.nombre,
+      apellidos: this.apellidos,
+      direccion: this.direccion,
+      
+      }).subscribe({
+        next: response => {
+          this.success = true;
+          localStorage.removeItem('idUserUpdate');
+        },
+        error: (err) => {
+          console.error(err); // Maneja el error
+        }
+      });
+    }
 
 }

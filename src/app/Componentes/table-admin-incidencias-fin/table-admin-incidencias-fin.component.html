@@ -16,6 +16,7 @@
                 <th>Equipo</th>
                 <th>Descripcion</th>
                 <th>Fecha alta</th>
+                <th>Fecha inicio</th>
                 <th>Fecha fin</th>
                 <th>Estado</th>
                 <th>Opciones</th>
@@ -23,19 +24,20 @@
         </thead>
         <tbody>
             <tr *ngIf="loading">
-                <td colspan="6">Cargando datos...</td>
+                <td colspan="8">Cargando datos...</td>
             </tr>
             <tr *ngIf="error">
-                <td colspan="6">{{ error }}</td>
+                <td colspan="8">{{ error }}</td>
             </tr>
             <tr *ngIf="!loading && !error && incidencias.length === 0">
-                <td colspan="6">No hay datos disponibles</td>
+                <td colspan="8">No hay datos disponibles</td>
             </tr>
             <tr *ngFor="let incidencia of incidencias">
                 <td>{{ incidencia.idIncidencia }}</td>
                 <td>{{ incidencia.serialNumber.serialNumber }}</td>
                 <td>{{ incidencia.descripcionCliente }}</td>
                 <td>{{ incidencia.fechaAlta }}</td>
+                <td>{{ incidencia.fechaInicio }}</td>
                 <td>{{ incidencia.fechaFin }}</td>
                 <td>{{ incidencia.estado }}</td>
                 <td class="table-buttons-options">

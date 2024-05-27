@@ -62,5 +62,7 @@
         </table>
         <button class="button-form first-button title-card">Borrar pedido</button>
         <button class="button-form first-button title-card">Realizar pedido</button>
+        <p class="error text-card" *ngIf="error">Error al realizar pedido</p>
+        <p class="success text-card" *ngIf="success">Pedido realizado correctamente</p>
     </div>
 </form>

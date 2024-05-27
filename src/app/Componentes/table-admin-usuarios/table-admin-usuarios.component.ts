@@ -13,6 +13,13 @@ export class TableAdminUsuariosComponent implements OnInit{
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
   currentView: 'all' | 'tecnicos' | 'clientes' = 'all';
   finalized: any;
+  showModal: boolean = false;
+  modalType: 'new-user' | 'update-user' | 'new-print'= 'new-user';
+  nombre: string = '';
+  apellidos:string = '';
+  username: string = '';
+  password: string = '';
+  direccion: string = '';
 
   constructor(public service: UserService) { }
   
@@ -72,16 +79,31 @@ export class TableAdminUsuariosComponent implements OnInit{
       }
     }
 
-    showModal: boolean = false;
-    modalType: 'new-user' | 'update-user' | 'new-print'= 'new-user';
+    getRoleLabel(rolNombre: string): string {
+      switch (rolNombre) {
+        case 'ROL_CLIENTE':
+          return 'Cliente';
+        case 'ROL_TECNICO':
+          return 'Tecnico';
+        case 'ROL_ADMIN':
+          return 'Administrador';
+        case 'ROL_INVITADO':
+          return 'Invitado';
+        default:
+          return rolNombre;
+      }
+    }
 
     showNewUser(){
       this.modalType = 'new-user';
       this.showModal = true;
     }
-    showUpdateUser(){
+    showUpdateUser(idUsuario: number){
       this.modalType = 'update-user';
       this.showModal = true;
+      this.getUser(idUsuario);
+      console.log(idUsuario);
+      localStorage.setItem('idUserUpdate', idUsuario.toString())
     }
     showNewPrint(){
       this.modalType = 'new-print';
@@ -90,5 +112,22 @@ export class TableAdminUsuariosComponent implements OnInit{
 
     closeModal() {
       this.showModal = false;
+    }
+
+    getUser(idUsuario: number): void {
+      this.service.getUser(idUsuario).subscribe({
+        next: (userData: any) => {
+          // Asigna los datos del usuario a las propiedades del componente
+          this.nombre = userData.nombre;
+          this.apellidos = userData.apellidos;
+          this.username = userData.username;
+          this.direccion = userData.direccion;
+          console.log(userData)
+        },
+        error: (err) => {
+          console.error(err); // Maneja el error
+        }
+  
+      });
     }
 }

@@ -18,14 +18,14 @@ export class FormLoginComponent{
   login(): void {
     this.authService.login({ username: this.username, password: this.password }).subscribe({
       next: response => {
-        this.router.navigate(['']);
+        // Navigate to the home page after successful login
+        this.router.navigate(['/home']);  // Asegúrate de que esta ruta sea correcta
       },
       error: err => {
         this.errorMessage = 'Login failed. Please check your username and password.';
         console.error('Login failed', err);
       }
-    }); 
-    
+    });
   }
 
   showModal: boolean = false;

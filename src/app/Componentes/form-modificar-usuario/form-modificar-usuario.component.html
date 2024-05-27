@@ -20,5 +20,6 @@
             <textarea name="direccion" id="direccion" rows="3" class="textarea text-card" [(ngModel)]="direccion"></textarea>
         </div>
         <button type="submit" class="button-form first-button title-card">Actualizar perfil</button>
+        <p class="error text-card" *ngIf="error">Error al intentar modificar el usuario. Por favor, rellene todos los campos</p>
     </div>
 </form>

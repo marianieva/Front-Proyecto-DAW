@@ -1,6 +1,5 @@
 <div class="admin-usuarios-buttons-show">
     <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewUser()">Nuevo usuario</button>
-    <button class="btn-filter-inc nav-orange-button title-card" (click)="showUpdateUser()">Modificar usuario</button>
     <button class="btn-filter-inc nav-orange-button title-card" (click)="showNewPrint()">Nuevo equipo</button>
     <app-modal [showModal]="showModal" [modalType]="modalType" (closeModal)="closeModal()"></app-modal>
 </div>
@@ -19,32 +18,35 @@
         <thead>
             <tr>
                 <th>Nombre y apellidos</th>
+                <th>Username</th>
                 <th>Dirección</th>
                 <th>Zona</th>
                 <th>Rol</th>
-                <th>Estado</th>
                 <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngIf="loading">
-                <td colspan="7">Cargando datos...</td>
+                <td colspan="6">Cargando datos...</td>
             </tr>
             <tr *ngIf="error">
-                <td colspan="7">{{ error }}</td>
+                <td colspan="6">{{ error }}</td>
             </tr>
             <tr *ngIf="!loading && !error && usuarios.length === 0">
-                <td colspan="7">No hay datos disponibles</td>
+                <td colspan="6">No hay datos disponibles</td>
             </tr>
             <tr *ngFor="let usuario of usuarios">
                 <td>{{ usuario.nombre }} {{ usuario.apellidos }}</td>
+                <td>{{ usuario.username }}</td>
                 <td>{{ usuario.direccion }}</td>
                 <td>{{ usuario.zona.nombreZona }}</td>
-                <td>{{ usuario.roles.nombreRol }}</td>
-                <td> estado </td>
+                <td>        
+                    <ng-container *ngFor="let rol of usuario.roles; let i = index">
+                        {{ getRoleLabel(rol.rolNombre) }}<span *ngIf="i < usuario.roles.length - 1">, </span>
+                    </ng-container>
+                </td>
                 <td class="table-buttons-options">
-                    <button id="{{ usuario.idUsuario }}" class="button-form first-button text-card">Modificar</button>
-                    <button id="{{ usuario.idUsuario }}" class="button-form first-button text-card">Dar de baja</button>
+                    <button (click)="showUpdateUser(usuario.idUsuario)" class="button-form first-button text-card">Modificar</button>
                 </td>
             </tr>
         </tbody>

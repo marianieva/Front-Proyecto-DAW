@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,8 @@ import { Observable, map } from 'rxjs';
 export class AuthService {
 
   private baseUrl = 'http://localhost:8087';
+  private loggedIn = new BehaviorSubject<boolean>(this.isAuthenticated());
+  private userRole = new BehaviorSubject<string | null>(this.getRole());
 
   constructor(
     private http: HttpClient,
@@ -42,7 +44,7 @@ export class AuthService {
     localStorage.removeItem('authToken');
     localStorage.removeItem('userId');
     localStorage.removeItem('roles');
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
   getToken(): string | null {
@@ -53,5 +55,16 @@ export class AuthService {
     return !!localStorage.getItem('authToken');;
   }
 
+  getRole(): string | null {
+    return localStorage.getItem('roles');
+  }
+
+  get isLoggedIn(): Observable<boolean> {
+    return this.loggedIn.asObservable();
+  }
+
+  get currentUserRole(): Observable<string | null> {
+    return this.userRole.asObservable();
+  }
 
 }

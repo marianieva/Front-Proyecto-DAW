@@ -9,6 +9,8 @@ import { UserService } from '../../Services/user.service';
 export class FormCliAltaPedidoComponent implements OnInit {
 
   userRole: string = '';
+  error: string = '';
+  success:boolean = false;
 
   constructor(private userService: UserService) { }
 

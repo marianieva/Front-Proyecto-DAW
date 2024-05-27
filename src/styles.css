@@ -233,5 +233,20 @@ div.gradiente {
     margin-right: var(--shadow-margin-right);
 }
 
+/** 
 
+*****************************
+    STORYBOOK -- ERROR
+*****************************
 
+*/
+
+.error {
+    color: var(--error-color);
+    text-align: center;
+}
+
+.success {
+    color: var(--success-color);
+    text-align: center;
+}

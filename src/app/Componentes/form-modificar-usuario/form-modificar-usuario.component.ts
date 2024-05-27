@@ -10,6 +10,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class FormModificarUsuarioComponent implements OnInit {
 
+  error: string ='';
   userIdString: string | null = localStorage.getItem('userId');
   userId: number | null = this.userIdString ? parseInt(this.userIdString) : null;
   user: any = {};
@@ -18,7 +19,7 @@ export class FormModificarUsuarioComponent implements OnInit {
   apellidos:string = '';
   direccion: string = '';
   idUsuario  = Number(localStorage.getItem('userId'));
-
+  
   constructor(private userService: UserService,private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -51,6 +52,9 @@ export class FormModificarUsuarioComponent implements OnInit {
         next: response => {
           this.authService.logout
           this.router.navigate(['login'])
+        },
+        error: (err) => {
+          console.error(err); // Maneja el error
         }
       });
     }

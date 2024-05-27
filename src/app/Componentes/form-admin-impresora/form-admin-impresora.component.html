@@ -23,5 +23,7 @@
             <input type="text" class="input text-card">
         </div>
         <button class="button-form first-button title-card">Dar de alta equipo</button>
+        <p class="error text-card" *ngIf="error">Error al dar de alta nueva impresora</p>
+        <p class="success text-card" *ngIf="success">Impresora dada de alta correctamente</p>
     </div>
 </form>

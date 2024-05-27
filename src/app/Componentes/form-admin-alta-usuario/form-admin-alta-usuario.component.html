@@ -42,6 +42,8 @@
       </select>
     </div>
     <button class="button-form first-button title-card" type="submit">Crear usuario</button>
+    <p class="error text-card" *ngIf="error">Error al dar de alta nuevo usuario</p>
+    <p class="success text-card" *ngIf="success">Usuario dado de alta correctamente</p>
   </div>
 </form>
 

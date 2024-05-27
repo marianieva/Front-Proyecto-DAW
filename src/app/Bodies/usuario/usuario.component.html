@@ -1,6 +1,6 @@
 <div class="grid-body-container">
     <div class="back-home">
-        <button class="button-back-home nav-blue-button title-card" routerLink="">Volver al inicio</button>
+        <button class="button-back-home nav-blue-button title-card" routerLink="/home">Volver al inicio</button>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_CLIENTE'  || userRole === 'ROL_TECNICO'">
         <div class="profile-container">
@@ -15,7 +15,7 @@
             <app-table-cli-equipos></app-table-cli-equipos>
         </div>
         <div class="button-container">
-            <button class="button-large nav-blue-button title-card">Ver Histórico de pedidos</button>
+            <button class="button-large nav-blue-button title-card" routerLink="pedidos">Ver Histórico de pedidos</button>
         </div>
     </div>
     <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">

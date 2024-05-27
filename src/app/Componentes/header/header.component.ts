@@ -10,16 +10,23 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  userRole: string = '';
+  userRole: string | null = '';
+  isLoggedIn: boolean = false;
 
   constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.userRole = this.userService.getUserRole();
+    this.authService.isLoggedIn.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+    });
+    this.authService.currentUserRole.subscribe(role => {
+      this.userRole = role;
+    });
   }
 
   logout(): void {
     this.authService.logout(); // Llamar al método logout del servicio de autenticación
+    this.userRole = null;
   }
 
   

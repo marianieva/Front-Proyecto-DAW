@@ -28,6 +28,7 @@ export class TableAdminIncidenciasFinComponent implements OnInit{
       next: (data: any[]) => {
         this.incidencias = data.map(incidencia => {
           incidencia.fechaAlta = this.datePipe.transform(incidencia.fechaAlta, 'dd-MM-yyyy HH:mm');
+          incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm');
           return incidencia;
         });
@@ -46,6 +47,7 @@ export class TableAdminIncidenciasFinComponent implements OnInit{
       next: (data: any[]) => {
         this.incidencias = data.map(incidencia => {
           incidencia.fechaAlta = this.datePipe.transform(incidencia.fechaAlta, 'dd-MM-yyyy HH:mm');
+          incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm');
           return incidencia;
         });
@@ -64,6 +66,7 @@ export class TableAdminIncidenciasFinComponent implements OnInit{
       next: (data: any[]) => {
         this.incidencias = data.map(incidencia => {
           incidencia.fechaAlta = this.datePipe.transform(incidencia.fechaAlta, 'dd-MM-yyyy HH:mm');
+          incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm');
           return incidencia;
         });

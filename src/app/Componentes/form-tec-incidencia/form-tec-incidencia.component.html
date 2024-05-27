@@ -58,5 +58,7 @@
             <textarea name="comentario" id="comentario" rows="6" class="textarea text-card" placeholder="Añada su comentario sobre la incidencia"></textarea>
         </div>
         <button class="button-form first-button title-card">Finalizar incidencia</button>
+        <p class="error text-card" *ngIf="error">Error al finalizar incidencia</p>
+        <p class="success text-card" *ngIf="success">Incidencia finalizada correctamente</p>
     </div>
 </form>
