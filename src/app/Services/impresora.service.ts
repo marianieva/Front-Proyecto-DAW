@@ -17,6 +17,18 @@ export class ImpresoraService {
       catchError(this.findError)
     );
   }
+
+  newEquipo(datos: {
+    
+    marca: string, 
+    modelo: string,
+    usuario: number,
+    serialNumber: number
+  }): Observable<any>{
+    return this.http.post<any>(`http://localhost:8087/impresora/alta`, datos).pipe(
+      catchError(this.findError)
+    );
+  }
   
   private findError(error: HttpErrorResponse) {
     console.error('Ha ocurrido un error:', error);
