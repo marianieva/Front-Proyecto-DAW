@@ -13,8 +13,17 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
+  // HAY QUE PONERLE BIEN LA URL DEL BACK - TABLA ALMACEN
+  // getProductosAlmacen(idUsuario: number): Observable<any[]>{
+  //   const url = `${this.baseUrl}usuario/${idUsuario}`;
+  //   console.log('URL:', url); 
+  //   return this.http.get<any[]>(url)
+  //   .pipe(
+  //     catchError(this.findError)
+  //   );
+  // }
   getProductosAlmacen(idUsuario: number): Observable<any[]>{
-    const url = `${this.baseUrl}usuario/${idUsuario}`;
+    const url = `${this.baseUrl}lista`;
     console.log('URL:', url); 
     return this.http.get<any[]>(url)
     .pipe(
@@ -29,7 +38,7 @@ export class ProductoService {
   }
 
   getProductosPorMarcaTecnico(marca:string): Observable<any[]>{
-    const url = `${this.baseUrl}lista/repuestos/${marca}`;
+    const url = `http://localhost:8087/productos/lista/repuestos/${marca}`;
     return this.http.get<any[]>(url)
     .pipe(
       catchError(this.findError)

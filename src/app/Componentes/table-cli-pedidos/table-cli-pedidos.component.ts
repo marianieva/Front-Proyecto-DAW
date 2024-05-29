@@ -23,7 +23,7 @@ export class TableCliPedidosComponent implements OnInit {
 
   getPedidos(idUsuario:number) {
     this.loading= true;
-    this.service.getPedidos(idUsuario).subscribe({
+    this.service.getPedidosByUser(idUsuario).subscribe({
       next: (data: any[]) => {
         this.pedidos = data;
         this.loading = false; // Finaliza la carga

@@ -2,25 +2,25 @@
     <p *ngIf="userRole === 'cliente'">Formulario para realizar pedidos de consumibles</p>
     <p *ngIf="userRole === 'tecnico'">Formulario para realizar pedidos de recambios</p>
 </div>
-<form class="form-cli-alta-pedido-container form-container"  action="">
+<form class="form-cli-alta-pedido-container form-container" (ngSubmit)="altaPedido()" action="">
     <div class="form-first-column title-card">
         <div class="input">
             <p>Seleccione el equipo:</p>
-            <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="equipo" (ngModelChange)="onUsuarioChange()" required>
-                <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
-                  {{ equipo.marca }} - {{ equipo.modelo }}
-                </option>
+            <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="equipo" (ngModelChange)="onEquipoChange()" required>
+              <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
+                {{ equipo.marca }} - {{ equipo.modelo }}
+              </option>
             </select>
-        </div>
-        <div class="input">
+          </div>
+          <div class="input">
             <p>Seleccione producto:</p>
             <select name="producto" id="select-producto" class="select text-card" [(ngModel)]="producto" required>
-                <option class="error text-card" *ngIf="productos.length === 0" disabled>No hay productos</option>
-                <option *ngFor="let producto of productos" [value]="producto.idProducto">
-                  {{ producto.nombre }}
-                </option>
+              <option class="error text-card" *ngIf="productos.length === 0" disabled>No hay productos</option>
+              <option *ngFor="let producto of productos" [value]="producto.idProducto">
+                {{ producto.nombre }}
+              </option>
             </select>
-        </div>
+          </div>
         <div class="input">
             <p>Cantidad:</p>
             <select name="cantidad" id="select-cantidad" class="select text-card">
@@ -30,7 +30,7 @@
                 <option value="4"><span>4</span></option>
             </select>
         </div>
-        <button class="button-form first-button title-card">Seleccionar</button>
+        <button class="button-form first-button title-card" (click)="agregarACesta()">Seleccionar</button>
     </div>
     <div class="form-second-column">
         <table class="text-card card-shadow">
@@ -60,7 +60,7 @@
             </tbody>
         </table>
         <button class="button-form first-button title-card">Borrar pedido</button>
-        <button class="button-form first-button title-card">Realizar pedido</button>
+        <button type="submit" class="button-form first-button title-card">Realizar pedido</button>
         <p class="error text-card" *ngIf="error">Error al realizar pedido</p>
         <p class="success text-card" *ngIf="success">Pedido realizado correctamente</p>
     </div>

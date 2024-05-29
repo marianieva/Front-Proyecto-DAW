@@ -22,7 +22,7 @@ export class PedidosService {
   }
 
   getPedidosByUser(idUsuario: number): Observable<any[]>{
-    const url = `${this.baseUrl}/${idUsuario}`;
+    const url = `http://localhost:8087/pedido/usuario/${idUsuario}`;
     console.log('URL:', url); 
     return this.http.get<any[]>(url)
     .pipe(

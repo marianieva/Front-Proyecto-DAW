@@ -36,6 +36,11 @@ export class IncidenciaService {
     return this.http.put(url, {});
   }
 
+  iniciarIncidencia(idIncidencia: number): Observable<any> {
+    const url = `http://localhost:8087/incidencia/iniciar/${idIncidencia}`;
+    return this.http.put(url, {});
+  }
+
   getIncidenciasFinalizadas(idUsuario: number): Observable<any[]>{
     return this.http.get<any[]>(`http://localhost:8087/incidencia/usuario/${idUsuario}`)
     .pipe(
@@ -67,6 +72,11 @@ export class IncidenciaService {
       catchError(this.findError)
     );
   }
+  getincidenciasByUser(idUsuario:number): Observable<any> {
+      const url = `http://localhost:8087/incidencia/usuario/${idUsuario}`;
+      return this.http.get(url, {});
+  }
+  
 
   newIncidenciaAdmin(datos: {
     usuario: number, 

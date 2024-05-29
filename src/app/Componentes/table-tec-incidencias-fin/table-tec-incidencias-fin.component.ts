@@ -13,15 +13,31 @@ export class TableTecIncidenciasFinComponent implements OnInit {
   incidencias: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
-  idUsuario: number = 2;
-
-
-  @ViewChildren('btnCancelar') btnCancelar!: QueryList<ElementRef>;
+  idUsuario: number = Number(localStorage.getItem('userId'));
+  currentView: 'all' | 'finalized' | 'pending' = 'all';
 
   constructor(public service: IncidenciaService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
-    this.getIncidenciasFinalizadas();
+    this.getIncidenciasTecnico();
+  }
+
+  getIncidenciasTecnico(){
+    this.loading= true;
+    this.service.getincidenciasByUser(this.idUsuario).subscribe({
+      next: (data: any[]) => {
+        this.incidencias = data.map(incidencia => {
+          incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm'),
+          incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');
+          return incidencia;
+        });
+        this.loading = false; // Finaliza la carga
+      },
+      error: (err) => {
+        this.error = err; // Asigna el mensaje de error
+        this.loading = false; // Finaliza la carga
+      }
+    });
   }
 
   getIncidenciasFinalizadas() {
@@ -41,5 +57,42 @@ export class TableTecIncidenciasFinComponent implements OnInit {
       }
     });
   }
+
+  getIncidenciasPendientes() {
+    this.loading= true;
+    this.service.getIncidenciasPendientes(this.idUsuario).subscribe({
+      next: (data: any[]) => {
+        this.incidencias = data.map(incidencia => {
+          incidencia.fechaAlta = this.datePipe.transform(incidencia.fechaAlta, 'dd-MM-yyyy HH:mm');
+          return incidencia;
+        });
+        this.loading = false; // Finaliza la carga
+      },
+      error: (err) => {
+        this.error = err; // Asigna el mensaje de error
+        this.loading = false; // Finaliza la carga
+      }
+    });
+  }
+
+  changeView(view: 'all' | 'finalized' | 'pending') {
+    this.currentView = view;
+    if (view === 'all') {
+      this.getIncidenciasTecnico();
+    } else if (view === 'finalized') {
+      this.getIncidenciasFinalizadas();
+    } else if (view === 'pending') {
+      this.getIncidenciasPendientes();
+    }
+  }
   
+  iniciarIncidencia(idIncidenia: number) {
+    this.service.iniciarIncidencia(idIncidenia).subscribe({
+      next: response => {
+      },
+      error: (err) => {
+        this.error = err;
+      }
+    });
+  }
 }
