@@ -72,10 +72,21 @@ export class IncidenciaService {
       catchError(this.findError)
     );
   }
-  getincidenciasByUser(idUsuario:number): Observable<any> {
+  getincidenciasByUser(idUsuario:number): Observable<any[]> {
       const url = `http://localhost:8087/incidencia/usuario/${idUsuario}`;
-      return this.http.get(url, {});
+      return this.http.get<any[]>(url, {})
+      .pipe(
+        catchError(this.findError)
+      );
   }
+
+  getincidenciasByTecnico(idUsuario:number): Observable<any[]> {
+    const url = `http://localhost:8087/incidencia/tecnico/${idUsuario}`;
+    return this.http.get<any[]>(url, {})
+    .pipe(
+      catchError(this.findError)
+    );
+}
   
 
   newIncidenciaAdmin(datos: {

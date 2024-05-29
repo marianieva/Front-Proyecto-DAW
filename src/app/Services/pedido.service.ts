@@ -62,4 +62,14 @@ export class PedidosService {
     return this.http.put(url, {});
   }
 
+  crearPedido(pedido: {
+    tipoPedido: string | null,
+    idUsuario: number, 
+    detallesDto: {}
+  }): Observable<any>{
+    return this.http.post<any>(`http://localhost:8087/pedido/alta`, pedido).pipe(
+      catchError(this.findError)
+    );
+  }
+
 }

@@ -2,7 +2,7 @@
     <p *ngIf="userRole === 'cliente'">Formulario para realizar pedidos de consumibles</p>
     <p *ngIf="userRole === 'tecnico'">Formulario para realizar pedidos de recambios</p>
 </div>
-<form class="form-cli-alta-pedido-container form-container" (ngSubmit)="altaPedido()" action="">
+<form class="form-cli-alta-pedido-container form-container" (ngSubmit)="altaPedidoTecnico()" action="">
     <div class="form-first-column title-card">
         <div class="input">
             <p>Seleccione el equipo:</p>
@@ -23,14 +23,14 @@
           </div>
         <div class="input">
             <p>Cantidad:</p>
-            <select name="cantidad" id="select-cantidad" class="select text-card">
+            <select name="cantidad" id="select-cantidad" class="select text-card" [(ngModel)]="cantidad">
                 <option value="1"><span>1</span></option>
                 <option value="2"><span>2</span></option>
                 <option value="3"><span>3</span></option>
                 <option value="4"><span>4</span></option>
             </select>
         </div>
-        <button class="button-form first-button title-card" (click)="agregarACesta()">Seleccionar</button>
+        <button class="button-form first-button title-card" type="button" (click)="agregarACesta()">Seleccionar</button>
     </div>
     <div class="form-second-column">
         <table class="text-card card-shadow">
@@ -42,24 +42,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Producto 1</td>
-                    <td>10</td>
-                    <td><img src="assets/images/icons/trash.png" alt="Icono de basura"></td>
+                <tr *ngIf="cestaArray.length === 0">
+                    <td colspan="3">No hay productos en la cesta</td>
                 </tr>
-                <tr>
-                    <td>Producto 2</td>
-                    <td>15</td>
-                    <td><img src="assets/images/icons/trash.png" alt="Icono de basura"></td>
-                </tr>
-                <tr>
-                    <td>Producto 3</td>
-                    <td>20</td>
-                    <td><img src="assets/images/icons/trash.png" alt="Icono de basura"></td>
+                <tr *ngFor="let producto of cestaArray">
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td><img src="assets/images/icons/trash.png" alt="Icono de basura" (click)="eliminarProducto(producto.idProducto)"></td>
                 </tr>
             </tbody>
         </table>
-        <button class="button-form first-button title-card">Borrar pedido</button>
+        <button class="button-form first-button title-card" (click)="vaciarCesta()">Borrar pedido</button>
         <button type="submit" class="button-form first-button title-card">Realizar pedido</button>
         <p class="error text-card" *ngIf="error">Error al realizar pedido</p>
         <p class="success text-card" *ngIf="success">Pedido realizado correctamente</p>

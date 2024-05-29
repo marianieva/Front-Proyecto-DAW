@@ -7,10 +7,10 @@
     </div>
     <div class="profile-second-column">
         <div class="profile-content text-description">
-            <p>Nombre: <span>{{ user.nombre }}</span></p>
-            <p>Apellidos: <span>{{ user.apellidos }}</span></p>
-            <p>Dirección: <span>{{ user.direccion }}</span></p>
-            <p>Zona: <span>{{ user.zona.nombreZona }}</span></p>
+            <p>Nombre: <span>{{ user?.nombre }}</span></p>
+            <p>Apellidos: <span>{{ user?.apellidos }}</span></p>
+            <p>Dirección: <span>{{ user?.direccion }}</span></p>
+            <p>Zona: <span>{{ user?.zona?.nombreZona }}</span></p>
         </div>
         <div class="profile-button text-description">
             <button class="button-update-profile nav-blue-button text-description" (click)="openModal()">Modificar perfil</button>

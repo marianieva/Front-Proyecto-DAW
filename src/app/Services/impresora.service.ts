@@ -25,6 +25,13 @@ export class ImpresoraService {
     );
   }
 
+  getEquiposCliente(userId : number): Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8087/impresora/cliente/${userId}`)
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
   newEquipo(datos: {
     marca: string, 
     modelo: string,

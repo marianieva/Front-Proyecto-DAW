@@ -24,8 +24,9 @@ export class TableTecIncidenciasFinComponent implements OnInit {
 
   getIncidenciasTecnico(){
     this.loading= true;
-    this.service.getincidenciasByUser(this.idUsuario).subscribe({
+    this.service.getincidenciasByTecnico(this.idUsuario).subscribe({
       next: (data: any[]) => {
+        console.log(data)
         this.incidencias = data.map(incidencia => {
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm'),
           incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');

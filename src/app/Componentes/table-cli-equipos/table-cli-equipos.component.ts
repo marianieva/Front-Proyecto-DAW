@@ -11,7 +11,7 @@ export class TableCliEquiposComponent implements OnInit {
   equipos: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
-  idUsuario= 3;
+  idUsuario: number = Number(localStorage.getItem('userId'));
 
   @ViewChildren('btnPedido') btnPedido!: QueryList<ElementRef>;
 
