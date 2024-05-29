@@ -90,4 +90,14 @@ export class TableAdminIncidenciasFinComponent implements OnInit{
     }
   }
 
+  cancelarIncidencia(idIncidenia: number) {
+    this.service.cancelarIncidencia(idIncidenia).subscribe({
+      next: response => {
+      },
+      error: (err) => {
+        this.error = err;
+      }
+    });
+  }
+
 }

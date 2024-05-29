@@ -15,6 +15,8 @@ export class TableAdminPedidosComponent implements OnInit  {
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
   currentView: 'all' | 'recambios' | 'consumibles' = 'all';
   finalized: any;
+detalles: any;
+productos: any;
 
   constructor(public service: PedidosService, private datePipe: DatePipe) { }
    
@@ -83,6 +85,27 @@ export class TableAdminPedidosComponent implements OnInit  {
     } else if (view === 'consumibles') {
       this.getPedidosConsumibles();
     }
+  }
+
+  getTypeLabel(tipoPedido: string): string {
+    switch (tipoPedido) {
+      case 'CLIENTE':
+        return 'Consumibles';
+      case 'TECNICO':
+        return 'Recambios';
+      default:
+        return tipoPedido;
+    }
+  }
+
+  confirmarPedido(idPedido: number) {
+    this.service.confirmarPedido(idPedido).subscribe({
+      next: response => {
+      },
+      error: (err) => {
+        this.error = err;
+      }
+    });
   }
 
 }

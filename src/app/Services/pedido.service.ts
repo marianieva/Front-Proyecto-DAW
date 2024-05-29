@@ -48,4 +48,9 @@ export class PedidosService {
     );
   }
 
+  confirmarPedido(idPedido:number): Observable<any>{
+    const url = `http://localhost:8087/pedido/confirmar/${idPedido}`;
+    return this.http.put(url, {});
+  }
+
 }

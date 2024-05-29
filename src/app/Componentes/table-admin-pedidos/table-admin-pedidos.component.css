@@ -18,8 +18,18 @@
     }
 }
 
-@media screen and (max-width:600px) {
-    .admin-pedidos-buttons{
+.table-buttons-options {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 880px) {
+    .table-buttons-options {
         flex-direction: column;
     }
 }
+
+.table-admin-pedidos {
+    max-height: 600px;
+    overflow-y: auto;
+  }

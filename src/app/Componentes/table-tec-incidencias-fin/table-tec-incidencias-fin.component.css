@@ -4,4 +4,6 @@
 
 .table-tec-incidencias{
     margin-bottom: 24px;
+    max-height: 600px;
+    overflow-y: auto;
 }

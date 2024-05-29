@@ -30,11 +30,6 @@ export class IncidenciaService {
       catchError(this.findError)
     );
   }
-
-  private findError(error: HttpErrorResponse) {
-    console.error('Ha ocurrido un error:', error);
-    return throwError('Error al recuperar los datos; inténtelo de nuevo más tarde.');
-  }
   
   cancelarIncidencia(idIncidencia: number): Observable<any> {
     const url = `http://localhost:8087/incidencia/cancelar/${idIncidencia}`;
@@ -71,6 +66,22 @@ export class IncidenciaService {
       ),
       catchError(this.findError)
     );
+  }
+
+  newIncidenciaAdmin(datos: {
+    usuario: number, 
+    serialNumber: number,
+    descripcionCliente: string,
+    listaProductos: any[];
+  }): Observable<any>{
+    return this.http.post<any>(`http://localhost:8087/incidencia/alta`, datos).pipe(
+      catchError(this.findError)
+    );
+  }
+
+  private findError(error: HttpErrorResponse) {
+    console.error('Ha ocurrido un error:', error);
+    return throwError('Error al recuperar los datos; inténtelo de nuevo más tarde.');
   }
   
 }

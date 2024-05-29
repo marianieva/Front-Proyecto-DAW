@@ -5,17 +5,20 @@
 <form class="form-cli-alta-pedido-container form-container"  action="">
     <div class="form-first-column title-card">
         <div class="input">
-            <p>Seleccione su equipo:</p>
-            <select name="equipo" id="select-equipo" class="select text-card">
-                <option value="1"><span>Opcion 1</span></option>
-                <option value="2"><span>Opcion 2</span></option>
+            <p>Seleccione el equipo:</p>
+            <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="equipo" (ngModelChange)="onUsuarioChange()" required>
+                <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
+                  {{ equipo.marca }} - {{ equipo.modelo }}
+                </option>
             </select>
         </div>
         <div class="input">
             <p>Seleccione producto:</p>
-            <select name="producto" id="select-producto" class="select text-card">
-                <option value="1"><span>Opcion 1</span></option>
-                <option value="2"><span>Opcion 2</span></option>
+            <select name="producto" id="select-producto" class="select text-card" [(ngModel)]="producto" required>
+                <option class="error text-card" *ngIf="productos.length === 0" disabled>No hay productos</option>
+                <option *ngFor="let producto of productos" [value]="producto.idProducto">
+                  {{ producto.nombre }}
+                </option>
             </select>
         </div>
         <div class="input">
@@ -26,10 +29,6 @@
                 <option value="3"><span>3</span></option>
                 <option value="4"><span>4</span></option>
             </select>
-        </div>
-        <div class="input">
-            <p>Observaciones:</p>
-            <textarea name="observaciones" id="observaciones" rows="3" class="textarea text-card" placeholder="Indique su comentario"></textarea>
         </div>
         <button class="button-form first-button title-card">Seleccionar</button>
     </div>
