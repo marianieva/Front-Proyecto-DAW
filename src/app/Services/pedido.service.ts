@@ -20,6 +20,15 @@ export class PedidosService {
       catchError(this.findError)
     );
   }
+
+  getPedidosByUser(idUsuario: number): Observable<any[]>{
+    const url = `${this.baseUrl}/${idUsuario}`;
+    console.log('URL:', url); 
+    return this.http.get<any[]>(url)
+    .pipe(
+      catchError(this.findError)
+    );
+  }
   
   private findError(error: HttpErrorResponse) {
     console.error('Error al recuperar los datos:', error.message);

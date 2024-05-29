@@ -10,8 +10,7 @@ import { UserService } from '../../Services/user.service';
 export class ProfileCardComponent implements OnInit {
 
   userRole: string = '';
-  userIdString: string | null = localStorage.getItem('userId');
-  userId: number | null = this.userIdString ? parseInt(this.userIdString) : null;
+  userId: number = Number(localStorage.getItem('userId'));
   user: any;
 
   constructor(private userService: UserService) { }
@@ -41,15 +40,13 @@ export class ProfileCardComponent implements OnInit {
   }
 
   loadUser(): void {
-    if (this.userId !== null) {
+    if (this.userId) {
       this.userService.getUser(this.userId).subscribe({
         next: (data) => {
           this.user = data;
-          console.log(data); // Maneja la respuesta
-          // Aquí puedes manejar los datos del usuario si es necesario
         },
         error: (err) => {
-          console.error(err); // Maneja el error
+          console.error(err);
         }
       });
     }

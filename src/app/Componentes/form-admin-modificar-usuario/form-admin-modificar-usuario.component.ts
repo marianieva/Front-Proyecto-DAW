@@ -16,6 +16,7 @@ export class FormAdminModificarUsuarioComponent implements OnInit {
   idUsuarioString: string | null = localStorage.getItem('idUserUpdate')
 
   idUsuario: number = this. idUsuarioString ? parseInt(this. idUsuarioString): 0;
+  user: any = {};
 
   nombre: string = '';
   apellidos:string = '';
@@ -43,7 +44,7 @@ export class FormAdminModificarUsuarioComponent implements OnInit {
         this.apellidos = userData.apellidos;
         this.username = userData.username;
         this.direccion = userData.direccion;
-        console.log(userData)
+        this.user = userData;
       },
       error: (err) => {
         console.error(err); // Maneja el error

@@ -58,14 +58,12 @@ export class TableCliIncidenciasComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  cancelarIncidencia(idIncidencia: number) {
-    this.service.cancelarIncidencia(idIncidencia).subscribe({
-      next: () => {
-        console.log('Incidencia cancelada:', idIncidencia);
-        this.getIncidencias();
+  cancelarIncidencia(idIncidenia: number) {
+    this.service.cancelarIncidencia(idIncidenia).subscribe({
+      next: response => {
       },
       error: (err) => {
-        console.error('Error al cancelar la incidencia', err);
+        this.error = err;
       }
     });
   }

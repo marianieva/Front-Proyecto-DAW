@@ -1,11 +1,10 @@
 <div class="table-cli-equipos">
-    <table class="text-card card-shadow">
+<table class="text-card card-shadow">
     <thead>
         <tr>
             <th>Nº de serie</th>
             <th>Marca</th>
             <th>Modelo</th>
-            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -23,10 +22,6 @@
             <td>{{ equipo.marca }}</td>
             <td>{{ equipo.modelo }}</td>
 
-            <td class="table-buttons-options">
-                <button id="{{ equipo.serialNumber }}" class="button-form first-button text-card">Crear incidencia</button>
-                <button #btnPedido [attr.data-id]="equipo.serialNumber" id="btn-cancelar" class="button-form first-button text-card">Realizar pedido</button>
-            </td>
         </tr>
     </tbody>
 </table>

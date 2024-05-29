@@ -12,9 +12,8 @@ export class TableCliPedidosComponent implements OnInit {
   pedidos: any[] = []; // Para cargar el array con el JSON que devuelva la petición GET
   loading = true; // Para mostrar mensaje de carga de datos en el HTML
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
-  idUsuarioString = localStorage.getItem('userId');
 
-  idUsuario = Number(this.idUsuarioString);
+  idUsuario = Number(localStorage.getItem('userId'));
 
   constructor(public service: PedidosService) { }
 

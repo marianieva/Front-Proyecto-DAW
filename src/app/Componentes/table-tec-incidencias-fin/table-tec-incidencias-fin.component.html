@@ -21,7 +21,7 @@
             </tr>
             <tr *ngFor="let incidencia of incidencias">
                 <td>{{ incidencia.idIncidencia }}</td>
-                <td>{{ incidencia.serialNumber.serialNumber }}</td>
+                <td>{{ incidencia.marca + ' ' + incidencia.modelo }}</td>
                 <td>{{ incidencia.comentarioTecnico  || 'No hay comentario' }}</td>
                 <td>{{ incidencia.fechaInicio }}</td>
                 <td>{{ incidencia.fechaFin }}</td>

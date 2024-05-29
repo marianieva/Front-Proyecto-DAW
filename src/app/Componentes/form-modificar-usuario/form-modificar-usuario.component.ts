@@ -11,8 +11,7 @@ import { UserService } from 'src/app/Services/user.service';
 export class FormModificarUsuarioComponent implements OnInit {
 
   error: string ='';
-  userIdString: string | null = localStorage.getItem('userId');
-  userId: number | null = this.userIdString ? parseInt(this.userIdString) : null;
+  userId: number = Number(localStorage.getItem('userId'));
   user: any = {};
   username: string = '';
   nombre: string = '';
@@ -27,7 +26,7 @@ export class FormModificarUsuarioComponent implements OnInit {
   }
 
   loadUser(): void {
-    if (this.userId !== null) {
+    if (this.userId) {
       this.userService.getUser(this.userId).subscribe({
         next: (data) => {
           this.user = data;

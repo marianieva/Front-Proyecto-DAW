@@ -9,3 +9,11 @@
     margin-top: 16px;
     margin-bottom: 24px;
 }
+
+.button-container .button-large {
+    margin-right: 16px;
+}
+
+.button-container .button-large:last-child {
+    margin-right: 0;
+}

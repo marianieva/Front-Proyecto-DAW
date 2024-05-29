@@ -102,7 +102,6 @@ export class TableAdminUsuariosComponent implements OnInit{
       this.modalType = 'update-user';
       this.showModal = true;
       this.getUser(idUsuario);
-      console.log(idUsuario);
       localStorage.setItem('idUserUpdate', idUsuario.toString())
     }
     showNewPrint(){
@@ -122,7 +121,6 @@ export class TableAdminUsuariosComponent implements OnInit{
           this.apellidos = userData.apellidos;
           this.username = userData.username;
           this.direccion = userData.direccion;
-          console.log(userData)
         },
         error: (err) => {
           console.error(err); // Maneja el error

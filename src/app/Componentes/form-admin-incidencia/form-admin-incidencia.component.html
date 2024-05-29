@@ -16,7 +16,7 @@
             <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="serialNumber" required>
                 <option class="error text-card" *ngIf="equipos.length === 0" disabled>No tiene impresoras</option>
                 <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
-                  {{ equipo.serialNumber }}
+                    {{ equipo.marca }} {{ equipo.modelo }}
                 </option>
             </select>
         </div>
