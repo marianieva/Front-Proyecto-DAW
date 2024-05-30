@@ -11,11 +11,8 @@
         </div>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_TECNICO'">
-        <div class="title-first-body-container title-M">
-            <p class="title-text">Incidencias pendientes</p>
-        </div>
         <div class="profile-container">
-            <app-table-tec-incidencias-pend></app-table-tec-incidencias-pend>
+            <app-table-tec-incidencias-fin></app-table-tec-incidencias-fin>
         </div>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_ADMIN'">

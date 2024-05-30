@@ -26,7 +26,6 @@ export class TableTecIncidenciasFinComponent implements OnInit {
     this.loading= true;
     this.service.getincidenciasByTecnico(this.idUsuario).subscribe({
       next: (data: any[]) => {
-        console.log(data)
         this.incidencias = data.map(incidencia => {
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm'),
           incidencia.fechaInicio = this.datePipe.transform(incidencia.fechaInicio, 'dd-MM-yyyy HH:mm');
@@ -43,7 +42,7 @@ export class TableTecIncidenciasFinComponent implements OnInit {
 
   getIncidenciasFinalizadas() {
     this.loading= true;
-    this.service.getIncidenciasFinalizadas(this.idUsuario).subscribe({
+    this.service.getIncidenciasFinalizadasTecnico(this.idUsuario).subscribe({
       next: (data: any[]) => {
         this.incidencias = data.map(incidencia => {
           incidencia.fechaFin = this.datePipe.transform(incidencia.fechaFin, 'dd-MM-yyyy HH:mm'),
@@ -61,7 +60,7 @@ export class TableTecIncidenciasFinComponent implements OnInit {
 
   getIncidenciasPendientes() {
     this.loading= true;
-    this.service.getIncidenciasPendientes(this.idUsuario).subscribe({
+    this.service.getIncidenciasPendientesTecnico(this.idUsuario).subscribe({
       next: (data: any[]) => {
         this.incidencias = data.map(incidencia => {
           incidencia.fechaAlta = this.datePipe.transform(incidencia.fechaAlta, 'dd-MM-yyyy HH:mm');

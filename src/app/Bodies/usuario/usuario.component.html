@@ -3,6 +3,9 @@
         <button class="button-back-home nav-blue-button title-card" routerLink="/home">Volver al inicio</button>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_CLIENTE'  || userRole === 'ROL_TECNICO'">
+        <div class="title-second-body-container title-M">
+            <p class="title-text">Mi Perfil</p>
+        </div>
         <div class="profile-container">
             <app-profile-card></app-profile-card>
         </div>
@@ -19,14 +22,14 @@
             <button class="button-large nav-blue-button title-card" routerLink="/pedidos">Realizar pedido</button>
         </div>
     </div>
-    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
-        <div class="table-container">
-            <app-table-tec-incidencias-fin></app-table-tec-incidencias-fin>
-        </div>
-    </div>
     <div class="second-body-container" *ngIf="userRole === 'ROL_ADMIN'">
         <div class="table-container">
             <app-table-admin-usuarios></app-table-admin-usuarios>
+        </div>
+    </div>
+    <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
+        <div class="table-container">
+            <p> </p>
         </div>
     </div>
 </div>

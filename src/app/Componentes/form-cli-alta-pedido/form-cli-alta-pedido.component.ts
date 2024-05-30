@@ -154,7 +154,6 @@ export class FormCliAltaPedidoComponent implements OnInit {
         cantidad: cantidadSeleccionada
       });
     }
-    console.log(this.cestaArray)
   }
 
   eliminarProducto(idProducto: number){

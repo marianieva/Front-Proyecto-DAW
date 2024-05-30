@@ -39,7 +39,7 @@
                 <td>{{ incidencia.fechaFin }}</td>
                 <td>{{ incidencia.estado }}</td>
                 <td class="table-buttons-options">
-                    <button id="{{ incidencia.idIncidencia }}" class="button-form first-button text-card" [disabled]="incidencia.estado === 'ENCURSO' || 'TERMINADA' || 'CANCELADA'" (click)="iniciarIncidencia(incidencia.idIncidencia)">Iniciar</button>
+                    <button id="{{ incidencia.idIncidencia }}" class="button-form first-button text-card" [disabled] = "incidencia.estado === 'ENCURSO' || incidencia.estado === 'CANCELADA' || incidencia.estado === 'TERMINADA'" (click)="iniciarIncidencia(incidencia.idIncidencia)">Iniciar</button>
                 </td>
             </tr>
         </tbody>

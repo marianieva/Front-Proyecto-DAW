@@ -3,9 +3,9 @@
         <button class="button-back-home nav-blue-button title-card" routerLink="/home">Volver al inicio</button>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO'">
-        <!-- <div class="title-first-body-container title-M">
-            <p class="title-text">Formulario alta pedido consumibles</p>
-        </div> -->
+        <div class="title-first-body-container title-M">
+            <p class="title-text">Formulario alta pedido</p>
+        </div>
         <div class="profile-container">
             <app-form-cli-alta-pedido></app-form-cli-alta-pedido>
         </div>
@@ -28,7 +28,7 @@
     </div>
     <div class="second-body-container" *ngIf="userRole === 'ROL_TECNICO'">
         <div class="title-second-body-container title-M">
-            <p class="title-text">Almacén de pedidos</p>
+            <p class="title-text">Almacén de productos</p>
         </div>
         <div class="table-container">
             <app-table-tec-almacen></app-table-tec-almacen>

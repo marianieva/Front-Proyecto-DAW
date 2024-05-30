@@ -15,8 +15,8 @@ export class TableAdminPedidosComponent implements OnInit  {
   error = ''; // Para manejar los errores en la carga de datos de la petición GET
   currentView: 'all' | 'recambios' | 'consumibles' = 'all';
   finalized: any;
-detalles: any;
-productos: any;
+  detalles: any;
+  productos: any;
 
   constructor(public service: PedidosService, private datePipe: DatePipe) { }
    

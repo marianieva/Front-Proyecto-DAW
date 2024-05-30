@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Services/user.service';
 export class FormModificarUsuarioComponent implements OnInit {
 
   error: string ='';
+  success:boolean = false;
   userId: number = Number(localStorage.getItem('userId'));
   user: any = {};
   username: string = '';
@@ -30,8 +31,6 @@ export class FormModificarUsuarioComponent implements OnInit {
       this.userService.getUser(this.userId).subscribe({
         next: (data) => {
           this.user = data;
-          console.log(data); // Maneja la respuesta
-          // Aquí puedes manejar los datos del usuario si es necesario
         },
         error: (err) => {
           console.error(err); // Maneja el error
@@ -49,8 +48,9 @@ export class FormModificarUsuarioComponent implements OnInit {
       apellidos: this.apellidos,
       direccion: this.direccion}).subscribe({
         next: response => {
+          this.success = true;
           this.authService.logout
-          this.router.navigate(['login'])
+          this.router.navigate(['usuario'])
         },
         error: (err) => {
           console.error(err); // Maneja el error
