@@ -29,7 +29,7 @@ export class FormTecIncidenciaComponent implements OnInit {
   }
 
   getIncidenciaLista(idUsuario: number) {
-    this.incidenciaService.getIncidenciasPendientesTecnico(idUsuario).subscribe({
+    this.incidenciaService.getIncidenciasEnCurso(idUsuario).subscribe({
       next: (data: any[]) => {
         this.incidencias = data;
       },
@@ -91,11 +91,11 @@ export class FormTecIncidenciaComponent implements OnInit {
     return this.cestaArray.map(producto => ({ idProducto: producto.idProducto, cantidad: producto.cantidad }));
   }
 
-  finalizarIncidencia(): void {
+  finalizarIncidencia() {
     this.incidenciaService.finalizarIncidencia({
       idIncidencia: this.incidencia, 
-      comentarioTecnico: this.comentarioTecnico
-      //listaProductos: this.cestaArray
+      comentarioTecnico: this.comentarioTecnico,
+      productosEnIncidencia: this.cestaArray 
     }).subscribe({
       next: response => {
         this.success = true;

@@ -55,7 +55,7 @@ export class IncidenciaService {
   finalizarIncidencia(datos: {
     idIncidencia: number, 
     comentarioTecnico: string,
-    //listaProductos: any[];
+    productosEnIncidencia: any[];
   }): Observable<any>{
     return this.http.put<any>(`http://localhost:8087/incidencia/cerrar`, datos).pipe(
       catchError(this.findError)
@@ -83,6 +83,22 @@ export class IncidenciaService {
     .pipe(
       switchMap(incidencias =>
         this.http.get<any[]>('http://localhost:8087/incidencia/pendientes').pipe(
+          map(finalizadas => {
+            const finalizadasIds = new Set(finalizadas.map(f => f.idIncidencia));
+            const incidenciasFinalizadas = incidencias.filter(i => finalizadasIds.has(i.idIncidencia));
+            return incidenciasFinalizadas;
+          })
+        )
+      ),
+      catchError(this.findError)
+    );
+  }
+
+  getIncidenciasEnCurso(idUsuario: number): Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8087/incidencia/tecnico/${idUsuario}`)
+    .pipe(
+      switchMap(incidencias =>
+        this.http.get<any[]>('http://localhost:8087/incidencia/encurso').pipe(
           map(finalizadas => {
             const finalizadasIds = new Set(finalizadas.map(f => f.idIncidencia));
             const incidenciasFinalizadas = incidencias.filter(i => finalizadasIds.has(i.idIncidencia));
