@@ -25,6 +25,9 @@ export class FormCliAltaPedidoComponent implements OnInit {
   rol: string | null = localStorage.getItem('roles')
   tipoPedido: string = ''
   userId: number = Number(localStorage.getItem('userId'));
+  productosConsumibles: any[] = [];
+  productoConsumible: number = 0;
+
 
   constructor(
     public userService: UserService,
@@ -119,6 +122,20 @@ export class FormCliAltaPedidoComponent implements OnInit {
     });
   }
 
+  productosByMarcaCliente(marca: string) {
+    console.log('Buscando productos para la marca:', marca);
+    this.productoService.getProductosPorMarcaCliente(marca).subscribe({
+      next: (data: any[]) => {
+        this.productosConsumibles = data;
+        console.log('Productos recibidos:', this.productosConsumibles);
+      },
+      error: (err) => {
+        this.error = err;
+        console.log('Error al buscar productos:', err);
+      }
+    });
+  }
+
   onEquipoChange() {
     console.log('Equipo seleccionado:', this.equipo);
     const equipoSeleccionado = this.equipos.find(e => e.serialNumber.toString() === this.equipo);
@@ -128,6 +145,20 @@ export class FormCliAltaPedidoComponent implements OnInit {
       console.log('Equipo seleccionado:', equipoSeleccionado);
       console.log('Marca del equipo:', this.marca);
       this.productosByMarca(this.marca);
+    } else {
+      console.log('No se encontró el equipo seleccionado');
+    }
+  }
+
+  onEquipoChangeCliente() {
+    console.log('Equipo seleccionado:', this.equipo);
+    const equipoSeleccionado = this.equipos.find(e => e.serialNumber.toString() === this.equipo);
+    console.log(equipoSeleccionado)
+    if (equipoSeleccionado) {
+      this.marca = equipoSeleccionado.marca;
+      console.log('Equipo seleccionado:', equipoSeleccionado);
+      console.log('Marca del equipo:', this.marca);
+      this.productosByMarcaCliente(this.marca);
     } else {
       console.log('No se encontró el equipo seleccionado');
     }

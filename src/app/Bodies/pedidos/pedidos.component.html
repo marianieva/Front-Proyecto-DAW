@@ -3,9 +3,6 @@
         <button class="button-back-home nav-blue-button title-card" routerLink="/home">Volver al inicio</button>
     </div>
     <div class="first-body-container" *ngIf="userRole === 'ROL_CLIENTE' || userRole === 'ROL_TECNICO'">
-        <div class="title-first-body-container title-M">
-            <p class="title-text">Formulario alta pedido</p>
-        </div>
         <div class="profile-container">
             <app-form-cli-alta-pedido></app-form-cli-alta-pedido>
         </div>

@@ -36,4 +36,12 @@ export class ProductoService {
     );
   }
 
+  getProductosPorMarcaCliente(marca:string): Observable<any[]>{
+    const url = `http://localhost:8087/productos/lista/consumibles/${marca}`;
+    return this.http.get<any[]>(url)
+    .pipe(
+      catchError(this.findError)
+    );
+  }
+
 }

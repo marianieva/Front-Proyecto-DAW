@@ -1,10 +1,10 @@
 <div class="title-form title-M">
-    <p *ngIf="userRole === 'cliente'">Formulario para realizar pedidos de consumibles</p>
-    <p *ngIf="userRole === 'tecnico'">Formulario para realizar pedidos de recambios</p>
+    <p *ngIf="userRole === 'ROL_CLIENTE'">Formulario para realizar pedidos de consumibles</p>
+    <p *ngIf="userRole === 'ROL_TECNICO'">Formulario para realizar pedidos de recambios</p>
 </div>
 <form class="form-cli-alta-pedido-container form-container" (ngSubmit)="altaPedidoTecnico()" action="">
     <div class="form-first-column title-card">
-        <div class="input">
+        <div class="input" *ngIf="userRole === 'ROL_TECNICO'">
             <p>Seleccione el equipo:</p>
             <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="equipo" (ngModelChange)="onEquipoChange()" required>
               <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
@@ -12,12 +12,29 @@
               </option>
             </select>
           </div>
-          <div class="input">
+          <div class="input" *ngIf="userRole === 'ROL_TECNICO'">
             <p>Seleccione producto:</p>
             <select name="producto" id="select-producto" class="select text-card" [(ngModel)]="producto" required>
               <option class="error text-card" *ngIf="productos.length === 0" disabled>No hay productos</option>
               <option *ngFor="let producto of productos" [value]="producto.idProducto">
                 {{ producto.nombre }}
+              </option>
+            </select>
+          </div>
+          <div class="input" *ngIf="userRole === 'ROL_CLIENTE'">
+            <p>Seleccione el equipo:</p>
+            <select name="equipo" id="select-equipo" class="select text-card" [(ngModel)]="equipo" (ngModelChange)=" onEquipoChangeCliente()" required>
+              <option *ngFor="let equipo of equipos" [value]="equipo.serialNumber">
+                {{ equipo.marca }} - {{ equipo.modelo }}
+              </option>
+            </select>
+          </div>
+          <div class="input" *ngIf="userRole === 'ROL_CLIENTE'">
+            <p>Seleccione producto:</p>
+            <select name="productoConsumible" id="select-producto" class="select text-card" [(ngModel)]="productoConsumible" required>
+              <option class="error text-card" *ngIf="productosConsumibles.length === 0" disabled>No hay productos</option>
+              <option *ngFor="let productoConsumible of productosConsumibles" [value]="productoConsumible.idProducto">
+                {{ productoConsumible.nombre }}
               </option>
             </select>
           </div>
